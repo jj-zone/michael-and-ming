@@ -1,0 +1,1497 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Johnsong Music</title>
+  <meta content="Johnsong Music" name="description">
+  <meta content="Johnsong Music" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Johnsong Music
+  * Template URL: https://bootstrapmade.com/scaffold-bootstrap-metro-style-template/
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+  
+
+  <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px 0;
+            border-bottom: 2px solid #d32f2f;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: #2c2c2c;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        .video-gallery {
+            position: relative;
+            margin-bottom: 40px;
+            overflow: hidden;
+            padding: 10px 0;
+        }
+
+        .video-banner {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 10px;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .video-banner::-webkit-scrollbar {
+            display: none; /* WebKit */
+        }
+
+        .scroll-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid #d32f2f;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: #d32f2f;
+            z-index: 10;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .scroll-button:hover {
+            background: #d32f2f;
+            color: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .scroll-left {
+            left: 10px;
+        }
+
+        .scroll-right {
+            right: 10px;
+        }
+
+        .video-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            width: 320px;
+            flex-shrink: 0;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+        }
+
+        .video-thumbnail {
+            position: relative;
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, #6a6a6a, #999);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+        .video-card:hover .video-thumbnail img {
+            transform: scale(1.05);
+        }
+        
+        .video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .play-button::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 18px solid #d32f2f;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent; 
+            margin-left: 4px;
+        }
+
+        .video-card:hover .play-button {
+            background: rgba(255, 255, 255, 1);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .video-info {
+            padding: 20px;
+        }
+
+        .video-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2c2c2c;
+            margin-bottom: 8px;
+        }
+
+        .video-description {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .video-duration {
+            color: #999;
+            font-size: 0.8rem;
+            font-style: italic;
+        }
+
+        .video-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .video-overlay.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .video-modal {
+            position: relative;
+            max-width: 95vw;
+            max-height: 95vh;
+            background: #000;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .video-modal iframe {
+            width: 100%;
+            height: auto;
+            max-height: 90vh;
+            aspect-ratio: 16/9;
+            border: none;
+        }
+
+        @media (min-width: 1024px) {
+            .video-modal {
+                max-width: 80vw;
+                max-height: 85vh;
+            }
+            
+            .video-modal iframe {
+                max-height: 80vh;
+                width: 100%;
+                min-height: 60vh;
+            }
+        }
+
+        .close-button {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: #fff;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .close-button:hover {
+            background: #f0f0f0;
+            transform: scale(1.1);
+        }
+
+        .audio-section {
+            background: #fff;
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 40px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+
+        .audio-section h2 {
+            color: #2c2c2c;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .audio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .audio-item {
+            background: #f8f8f8;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #d32f2f;
+        }
+
+        .audio-item h3 {
+            color: #2c2c2c;
+            margin-bottom: 10px;
+        }
+
+        .track-list {
+            list-style: none;
+        }
+
+        .track-list li {
+            padding: 5px 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .gallery-section-title {
+            font-size: 1.5rem;
+            color: #2c2c2c;
+            margin-bottom: 20px;
+            padding-left: 10px;
+            border-left: 4px solid #d32f2f;
+        }
+        @media (max-width: 768px) {
+            .video-card {
+                width: 280px;
+            }
+            
+            .video-thumbnail {
+                height: 157px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .video-modal {
+                max-width: 95vw;
+            }
+
+            .scroll-button {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+        }
+  </style>
+  
+
+  <script 
+  src="
+https://www.paypal.com/sdk/js?client-id=BAAYUBZ_-vdCkit53pfSlX5cpSVEBcZxa-G3_tlBnHTB5K-md09chAdaB29EGxBkWcYQNBLn2AgoSrSB9g&components=hosted-buttons&enable-funding=venmo&currency=USD
+">
+</script>
+
+
+
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+      <img src="assets/img/johnsong-logo.png" style="width: 70px;" class="img-fluid" alt="Johnsong logo">
+      <div class="logo me-auto">
+        <h1><a style="color: #222222; line-height: 30px !important" href="index.html">Johnsong Music</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About<!--<i class="bi bi-chevron-down"></i>--></a></li>
+          <!--  <ul>
+              <li><a class="nav-link scrollto" href="#about">About Us</a></li>
+              <li><a class="nav-link scrollto" href="#team">Team</a></li>
+              <li><a class="nav-link scrollto" href="#testimonials">Testimonials</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+            </ul>-->
+          </li>
+          <li><a class="nav-link scrollto" href="#audio">Audio</a></li>
+          <li><a class="nav-link scrollto" href="#products">Products</a></li>
+          <li><a class="nav-link scrollto " href="#videos">Videos</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      <div class="header-social-links d-flex align-items-center">
+       <!--<a href="#" class="twitter"><i class="bi bi-twitter"></i></a>-->
+        <a href="https://www.facebook.com/Guitello" class="facebook"><i class="bi bi-facebook"></i></a>
+       <!--<a href="#" class="instagram"><i class="bi bi-instagram"></i></a>-->
+        <!--<a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>-->
+      </div>
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="fade-up">
+          <div>
+            <h1 style="color: #fff">Mission:</h1>
+            <h2 style="color: #bebebe">To preserve and enhance the
+              transformational power&nbsp;of&nbsp;great music in the lives
+              of others.</h2>
+            <a href="#about" class="btn-get-started scrollto">Learn about Johnsong</a>
+          </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left">
+          <img src="assets/img/Jeffrey-McFarland-Johnson-br.png" class="img-fluid" alt="Jeffrey McFarland-Johnson">
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-2" data-aos="zoom-in">
+            <img src="assets/img/Jeffrey_McFarland_Johnson_cellist.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-10 d-flex flex-column justify-contents-center" data-aos="fade-left">
+            <div class="content pt-4 pt-lg-0">
+              <h3>About Jeffrey McFarland-Johnson</h3>
+              <p>
+                Jeffrey McFarland-Johnson, Cellist, has gained a growing reputation for his performances in the Napa Valley since his arrival in 1988.
+                </p><p>
+                He holds a Master’s degree in Composition from UC San Diego and studied and performed throughout Europe and the United States. Jeffrey has played weddings, corporate events, and private gatherings as soloist, with harp, violin/flute trio and string quartets. He also performs on electric cello, acoustic and electric bass, guitar, and the bodhran.
+             
+             </p>   <p>
+                Mr. McFarland-Johnson enjoys composing and arranging music for singers, children, rock and jazz groups. Jeffrey has participated in numerous recording sessions and always looks forward to his next music engagement.
+             </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features">
+      <div class="container">
+
+        <ul class="nav nav-tabs row g-2 d-flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="100" role="tablist">
+
+          <li class="nav-item col-3" role="presentation">
+            <a class="nav-link show active" data-bs-toggle="tab" data-bs-target="#features-tab-1" aria-selected="true" role="tab">
+              <h4>Bach: Solo Cello Suites</h4>
+            </a>
+          </li><!-- End tab nav item -->
+
+          <li class="nav-item col-3" role="presentation">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-2" aria-selected="false" role="tab" tabindex="-1">
+              <h4>My Journey</h4>
+            </a><!-- End tab nav item -->
+
+          </li>
+          <li class="nav-item col-3" role="presentation">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-3" aria-selected="false" role="tab" tabindex="-1">
+              <h4>The Guitello Story</h4>
+            </a>
+          </li><!-- End tab nav item -->
+
+          <li class="nav-item col-3" role="presentation">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-4" aria-selected="false" role="tab" tabindex="-1">
+              <h4>The Napa Valley Duo</h4>
+            </a>
+          </li><!-- End tab nav item -->
+
+        </ul>
+
+        <div class="tab-content aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="tab-pane fade active show" id="features-tab-1" role="tabpanel">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                <h3>Bach: Solo Cello Suites</h3>
+                <p>
+                  The music of J.S. Bach has been revered for 300 years for its technical command, artistic beauty and intellectual depth.  Bach’s music serves as a conduit between the physical and the metaphysical and will continue to influence generations far into the future.  I have focused my energies on the solo cello suites.  These suites, with their complex, perfectly balanced fusion of rhythm, melody, harmony, bass and counterpoint matches exactly with my own sense of spiritual balance.  Performing these masterpieces live has shown me the powerful trifecta of composer, performer and listener–that when all three are present, the full power of the music comes alive.  Recordings I have made in the last few years document my sojourn with this remarkable music, but there is more work to be done and, of course, there are expenses.  Please consider helping me fund this work so we can, together, enrich the cultural landscape of our extraordinarily beautiful Napa Valley.
+                </p>
+               
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="assets/img/cello-views.png" alt="cello" class="img-fluid">
+              </div>
+            </div>
+          </div><!-- End tab content item -->
+
+          <div class="tab-pane fade" id="features-tab-2" role="tabpanel">
+            <div class="row">
+              <div class="col-lg-12 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                <h3>My Journey Performing Bach: Solo Cello Suites<br /> <p style="font-size: 18px; margin-top:15px">Jeffrey McFarland-Johnson</p></h3>
+                <p>
+                  In 1977, NASA launched Voyager 1 as a “message in a bottle” into the deep, eternal ocean of space. Among items contained in this greeting to intelligent alien life is a gold LP record with 31 recorded examples of mankind’s cultural heritage. The first music track on this album is J.S. Bach’s Brandenburg Concerto No.2 in F. Two other tracks of Bach’s music are on the album, along with Chuck Berry’s Johnny B. Goode and Stravinsky’s Le sacre du printemps. However, it is the music J.S. Bach which is considered by NASA, the highest scientific intellectual agency of its time, to be the premier form of art in sound yet conceived by humanity. This music, now over 300 years old, is eternal; it will continue to influence generations into the distant future.
+                </p><p>
+We know that music is a unique art form that serves as a conduit between the physical and the metaphysical. As an interpreter of Bach’s works, I cannot put my finger on the secret of what drives his music so directly into our spiritual unconscious, but Bach’s complex, perfectly balanced fusion of rhythm, melody, harmony, bass and counterpoint matches exactly with our own sense of spiritual balance. It is as though we are born with “Bach receptors” –ready to receive and incorporate his ethereal music.
+</p><p>
+When I retired from 22 years of teaching, I was free to pursue any number of goals; I soon focused on internalizing and performing the Bach solo cello suites. I took on the mantle of this responsibility in my own effort to support the continuation of mankind’s most important invention: civilization.
+                </p><p>
+My journey has taken this music, in live performance, into the hearts and minds of many hundreds of people from all walks of life. I love seeing listeners’ deep satisfaction in the moment, of course, but the key outcome I’ve witnessed is listeners’ increased peace of mind. Experiencing the cello suites performed live refreshes our desire to live, to move forward at the speed of life and to help others in the process. I have discovered that this music, internalized within me, played live to the public is far more impressive than the same music played by even the greatest of cellists, but emanating from a speaker cone or an iPhone. </p>
+
+What is missing in recordings? I believe it is witnessing the performer manipulate the instrument in real time as the music simultaneously projects out from the player’s ceremonial physical activity. This combination of physical motion and resulting sound projection is the most effective way to speak directly to the heart of the listener. When the trifecta of Composer – Performer – Listener is fused perfectly in live performance, the effects of this music are fully realized and experienced. </p> <p>
+
+As I continue my current journey of performing these suites live, I have begun documenting my sojourn with recordings and video casts to reach a larger audience. To present live performances and to document them, of course, requires funding and the support of people who believe in the power of Bach’s music presented live with purpose. For all who of you who hear this music, please accept it fully as my gift. If you should be able to donate, your support will help me perpetuate and record this musical outreach to a world currently starving for peace and camaraderie.
+
+ 
+</p> <p></p> <p></p>
+Musically yours,
+
+</p> <p></p> <p>
+Jeffrey McFarland-Johnson<br />
+Johnsong Music<br />
+P.O. Box 3646<br />
+Napa, CA  94558<br />
+ 
+</p> <p>
+Email: <a href="mailto:info@johnsong.com">info@johnsong.com</a>
+                </p>
+                
+              </div><!--
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="assets/img/working-2.jpg" alt="" class="img-fluid">
+              </div>-->
+            </div>
+          </div><!-- End tab content item -->
+
+          <div class="tab-pane fade" id="features-tab-3" role="tabpanel">
+            <div class="row">
+              <div class="col-lg-8 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                <h3>The Guitello Story ~
+                  A Never Ending Journey Of Music&nbsp;Evolution</h3>
+              
+                <p>
+                  This audio CD is the culmination of over 50-years of deep personal music study, capturing a body of music which has turned out to be unique and therapeutic in nature. It is a sonic reflection of the muse that speaks deep within us all, eternal music that unlocks the spirit; recorded on the only music instrument of its kind in the world that I know of that contains a great historical account of the Napa Valley in California. In today’s world, which seems to be evermore callus in recognizing the sensitive spiritual side of the human condition, it is comforting to know we have access to many means of advancing our inner being. This CD documents an encapsulated musical journey that can now be presented to you, the listener, for your benefit and enjoyment.
+                </p>
+                
+              </div>
+              <div class="col-lg-4 order-1 order-lg-2 text-center">
+                <img src="assets/img/Jeffrey_Johnson_Guitello_small.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+             
+                BEGINNINGS<hr />
+                <p>
+My music studies began before I could speak language. Music is a language of emotion based on organized sound and silence. Rarely is music thought of as a language, but I beg to differ. How is it that when I perform in public, it is always the children who turn to watch me playing and give me their full undivided attention? I believe it is because they don’t have those spiritual inhibitors yet established forming firewalls that block any such intervention. People today do not have the time to invest in their own spiritual well being. Everyone is vastly different from each other; yet, we all crave companionship, adulation, and personal satisfaction.
+</p>
+My first music teacher taught me the piano from ages 5-12. Beryl Thompson studied at Juilliard at one time; she also taught Greek to students of the New Testament Bible, and smoked cigarettes incessantly. She gave me a firm musical foundation, the kernel of truth I needed to springboard forward, and I still have my little Beethoven bust she gave me as a prize for learning my four-octave two-hands major and minor scales. I remember how she would gently slap the top of my hand with the eraser end of a pencil if I made a mistake. She loved me into becoming a musician for which I am eternally grateful. My mother, who played piano for the church choir, allowed me occasionally to stay at home from school to practice the piano. I recall her saying “Good-bye,” and she would return home from work after 5 p.m. to find me still playing the piano. And she would write me excuse notes to school that I was ‘sick.’ Unfortunately, at the age of twelve, rock ‘n roll diverted my attention to my piano studies as amps and guitars became the rage.</p>
+<p>
+At the age of seven I took up the cello in elementary school only because, “It was an instrument that was taller than me,” and Mrs. Selvy said that all open positions for bass drum and trumpet had been taken and were now closed, so you could only choose between the violin and the cello. I also remember finding a piece of rosin in the back pouch of my school cello and biting into it thinking it was a piece of candy. It took a LONG time to get rid of the effects of my teeth sticking together. But, I grew to love playing the cello and coasted through high school in this fashion, all the while playing the guitar on the side.
+</p><p>
+But, then there was this single moment when I was stirred into believing that I should like to pursue the study of the cello seriously. That was when, by chance, I walked by an open door of a college orchestra rehearsing the Brahms Symphony No.3, with six cellos playing that haunting opening melody of the third movement, Poco Allegretto. I was immediately smitten and vowed that the cello would be my primary instrument from then on. It is still that way today.
+</p>
+ 
+
+EVOLUTION<hr />
+<p>
+As I was completing my senior year at The Conservatory of Music at the University of the Pacific I was given the opportunity of studying the cello at the Sibelius Academy in Helsinki, Finland with Arto Noras, who placed second in the 1966 Tchaikovsky Competition. So, I packed my clothes in my cello case, checked it into baggage and flew to Helsinki to study the cello! I remember having to memorize all my etudes and concerti and my lessons involved practicing four to fourteen hours a day. What else was there to do? I didn’t know Finnish and I had no money to travel with, so I just practiced and practiced every day for over a year. For example, at an early cello lesson I remember Arto telling me to play one note for two-hours straight, which I complied with and, consequently, learned a great deal about myself, not just how to play the cello. To relieve me of the tension and anxiety of practicing the cello, I had access to a Stella steel string guitar, that I played sitting in the corner on the little hexagon tile floor of the kitchen. There, I immersed myself in the blues and rock ‘n roll and charted the pentatonic patterns which I eventually expanded into a series of method books that illustrate the geometric tonal structural patterns of string instruments tuned in fourths and fifths that entitled TONIC TO CHROMATIC.
+</p><p>
+When I returned to the USA, I found it difficult, if not impossible to find work as a cellist. There weren’t the nine professional orchestras that Helsinki had to tap from and there wasn’t the support for the arts that I had felt in Scandinavia. Nevertheless, I continued to write, compose, practice, learned to play jazz cello and taught privately in addition to working other jobs to get by and make ends meet. After completing my first edition of my guitar method I then met my wife of thirty years. She helped to straighten my life out in terms of learning to work to create and mold your lifestyle. So, I went back to school, got my multiple-subject teaching credential with a supplementary credential in music and taught music and language arts/social studies classes to middle school aged students for twenty-two years. All the while I continued to play weddings, do recitals, and play corporate engagements as well as work constantly in defining myself as a solo-performing artist. My projects led me to design and build an electric cello, called a Cellektra, that I would play through a self-contained mobile amplification system with MIDI accompaniments that I arranged and assembled into separate catagories: Classical, Jazz, & Pop/Rock. In those early days I used cassette tape, then CD-Rs, and now I use iPods. I’ve commissioned specialists in their field to fabricate valve amps and effects pedals to compliment my electric cello, guitar and bass sound. I found that it is extremely important to network with others in achieving your intended goals.
+</p>
+
+THE GUITELLO AND THE BACH CELLO SUITES<hr />
+<p>
+In all of Western music, there is no work more influential to me than the six solo cello suites by J.S. Bach. Within these enigmatic pieces lies the essence of human existence, the DNA of human emotion scored for one soloist to play. They are open-ended works, written somewhere between 1713-1720. There exists no autograph copy; the earliest copy penned by Anna Magdalena, Bach’s second wife (some believe she wrote the suites). This music is eternal and it fascinates me how many interpretations there are of these pieces, both in score form and in recordings. They reach to the listener because they are French dance movements based in folk tradition, the music of the people.
+</p>
+The death of Jimi Hendrix on September 18, 1970 also focused my attention to the cello suites. I was in high school at the time and I came home from school, exceedingly bummed by the news, and just dropped the turntable needle anywhere on a side of the Are You Experienced? LP, just to hear Jimi’s voice speak to me. What he told me directly was, “I don’t live today.” And I remember standing there alone wide-eyed having just been spoken to by someone who’s no longer walking the planet. It was an epiphany of sorts, which caused me to dive ever deeper into my music, driven by Jimi’s creative energy, with the Bach suites being a big part of my regimen at the time.
+</p><p>
+For these reasons I decided to commission David Heitzman to build me an acoustic guitar-like instrument tuned as a 5-string cello, a violoncello piccolo, the instrument I needed to play the sixth suite in D-major. The sixth suite is the pinnacle work of the suites, a symphony all rolled up into one linear musical form. The music contained in the sixth suite has always eluded me because of the complex advanced technique required to just play this suite on a four-stringed cello! So, I found that by playing the suites on a flat-picked steel-stringed guitar/lute-like instrument tuned in fifths I was able to come up with a fresh and vibrant interpretation that communicates well to a listening audience. I found that I can play music phrases very delicately and with finesse, and that the listening public willingly accepts these suites interpreted on a plucked instrument instead of bowed. Don’t get me wrong; I also love playing the suites on a bowed four-string cello. When the instrument was finished, David and I began bantering about various names of what to call this hybrid of an acoustic guitar, cello, and the lute. It was David’s mother who finally came up with the name “Guitello.”
+</p><p>
+The historical connection of the Guitello to the Napa Valley comes from the fact that David Heitzman, through selective vintner connections, was able to secure some bottom planks of clear cut redwood that were the bottom floor of a 30,000 gallon cabernet wine vat built in the early 1940s by Cesare Mondavi, the father of Peter Sr. and Robert Mondavi. These 6″ thick planks were gummy on one side from over 60-years of vintage storage cycles and wormhole eaten on the other side. David had to extract the 1/8″ top from the center of the plank. Whether it’s the clear-grained redwood, the minerals impregnated in the wood from decades of holding wine, or a combination thereof, the warm vibrant tone of the Guitello’s sound is what strikes you first. What also struck me was how the interior of the body smelled like wine for a number of months!
+</p>
+ 
+
+RECORDING THE BACH SUITES #1, 2, 3<hr />
+<p>
+Coming to grips with the idea of recording the Bach cello suites is a daunting task. These pieces are so intimately personal to you. I kept putting off wanting to record them because there is no definitive way to play them, as they are such openly conceptual pieces. Every day you play them they change their sonic complexion according to the season, your demeanor, and the world you live in. I’ve read how Casals & Rostropovich refused to record them when asked, for years or even decades. And then, after recording them, their careers catapulted anew into the public limelight.
+</p><p>
+So, recently, it came to pass that it was now my time to record the suites. The situation came about through my association with an engineer friend of mine, Donald Setaro. Through Donald’s connections, we were able to rent a 444-seat auditorium on January 3-4, 2013 and record suites #1-3 on the Guitello. We pooled some nice condenser microphones, tube mic preamps, a Mac Pro tower with Pro Tools v.10, and built a mobile DAW system off to the side of the stage. I had intensely prepared for this recording session six weeks in advance by playing through those first three suites every day, by memory, until I could see the score in my sleep and play them through completely playing “Air” cello. I probably looked pretty funny like a person talking into the air through their cell phone headset.
+</p><p>
+Now, I have this excellently produced CD to distribute to listeners across the globe. Listening to this music causes the brain to rethink and remind itself to do unfinished tasks, make new contacts, and try out new methods of problem solving that weren’t previously implemented. It is music that is eternal in both scope and concept that will remain far beyond all other music we listen to currently. Presently, I am preparing to record the next set of suites #4-6.
+</p><p>
+For more information please visit <a href="https://www.facebook.com/guitello">facebook.com/guitello</a>.</p>
+              </div>
+        
+            </div>
+          </div><!-- End tab content item -->
+
+          <div class="tab-pane fade" id="features-tab-4" role="tabpanel">
+            <div class="row">
+              <div class="col-lg-8 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                <h3>The Napa Valley Duo</h3>
+                <p>
+                  With over a century of combined individual effort to unrelentingly perfect their artistry, The Napa Valley Duo offersa fresh and unique pairing of musicianship that has only recently made their public debut.
+
+Jeffrey McFarland-Johnson, violoncello and Terry Winn, piano had worked together previously for eight years as public school instructors teaching language arts and social studies to sixth grade middle school students. It was by chance that they convened as performing musicians when they both retired from public school instruction and discovered their mutual love for the music of Paris, 1880-1915.
+
+ 
+
+
+                </p>
+               
+              </div>
+              <div class="col-lg-4 order-1 order-lg-2 text-center">
+                <img src="assets/img/napa_valley_duo-1.jpg" alt="The Napa Valley Duo" class="img-fluid">
+              </div>
+            </div>
+          </div><!-- End tab content item -->
+
+        </div>
+
+      </div>
+    </section><!-- End Features Section -->
+
+           <!-- ======= Rosin Section ======= -->
+           <section id="products" class="portfolio">
+
+            <div class="section-title" data-aos="fade-up">
+              <h2>Johnsong Products</h2>
+              <p></p>
+            </div>
+
+           <section id="rosin" class="rosin">
+            <div class="col-lg-12 aos-init aos-animate" data-aos="zoom-in">
+                <div class="aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                 
+                    <div style="background-color:#fff !important; margin-top: 60px; margin-bottom: 60px; margin-right: auto; padding-top: 5px; padding-bottom: 0px; border-radius: 12px;" class="col-lg-6 container">
+                      <img src="assets/img/rosin-products-01.png" data-aos="zoom-in" class="rosin-img" alt="Johnsong Rosin">
+                      <!--<h3 style="color: #444"><span class="trademark-text">Johnsong</span> Rosin</h3>-->
+                     
+                      <div class="row">
+
+                      <div class="col-lg-5 aos-init aos-animate" data-aos="zoom-in">
+                        <h3 style="padding-top: 0px; margin-top: 0px; color: #d32f2f !important; font-size: 20px !important; font-weight: bolder !important;">Available now!</h3>
+                        <p style="color: #444"><span class="trademark-text">Johnsong</span> Rosin is crafted for string players seeking a rich tone and effortless playability. Made from pure pine resin, it creates the ideal grip between bow and strings, resulting in smooth bowing, clear note definition, and a warm, resonant sound. Perfect for violin, viola, or cello, it delivers consistent performance in both practice and performance settings. Designed with precision, it produces minimal dust, lasts a long time, and provides an elegant playing experience. Available in a black or white box, or a sleek round black metal container, Johnsong Rosin makes a thoughtful gift for any string player—exclusively at Johnsong.com.</p>
+                       
+                      </div>
+                      <div class="col-lg-7" data-aos="zoom-in">
+                     
+                      <div id="paypal-container-J3GSQVB4CVT94"></div>
+                      <script>
+                        paypal.HostedButtons({
+                          hostedButtonId: "J3GSQVB4CVT94",
+                        }).render("#paypal-container-J3GSQVB4CVT94")
+                      </script>
+                      
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+
+              
+      
+           
+
+        
+          </section><!-- End Rosin -->
+
+          
+    <!-- ======= Portfolio Section ======= -->
+
+      <div class="container">
+
+        
+
+        <div class="row">
+          <div class="col-lg-12 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active"></li>
+              
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/guitello-cd.png" class="img-fluid" alt="Guitello CD">
+              <div class="portfolio-info">
+                <h4>Guitello</h4>
+                <p>Bach Cello Suites 1,2,3 CD</p>
+              </div>
+              <div class="portfolio-links">
+                <a href="assets/img/portfolio/guitello-cd.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Guitello CD"><i class="bx bx-plus"></i></a>
+                <a href="guitello-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/A-Visual-Approach-to-Scales-and-Chords-on-Guitar.png" class="img-fluid" alt="A Visual Approach to Scales and Chords on Guitar">
+              <div class="portfolio-info">
+                <h4>Music Theory Book</h4>
+                <p style="letter-spacing: -.5px !important;">A Visual Approach to Scales &amp; Chords on Guitar</p>
+              </div>
+              <div class="portfolio-links">
+                <a href="assets/img/portfolio/A-Visual-Approach-to-Scales-and-Chords-on-Guitar.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="A Visual Approach to Scales and Chords on Guitar"><i class="bx bx-plus"></i></a>
+                <a href="visual-approach-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/perfect-ABC-songbook.png" class="img-fluid" alt="The Perfect ABC Songbook">
+              <div class="portfolio-info">
+                <h4>Songbook CD</h4>
+                <p>The Perfect ABC Songbook</p>
+              </div>
+              <div class="portfolio-links">
+                <a href="assets/img/portfolio/perfect-ABC-songbook.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="The Perfect ABC Songbook"><i class="bx bx-plus"></i></a>
+                <a href="perfect-ABC-songbook-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/Bach-Cello-Suites-CD.png" class="img-fluid" alt="Bach Cello Suites CD">
+              <div class="portfolio-info">
+                <h4>Bach Cello Suites</h4>
+                <p>Jeffrey McFarland-Johnson, Cello CD</p>
+              </div>
+              <div class="portfolio-links">
+                <a href="assets/img/portfolio/Bach-Cello-Suites-CD.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="BACH Jeffrey McFarland-Johnson, Cello"><i class="bx bx-plus"></i></a>
+                <a href="bach-suites-cello-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/An-American-In-Paris-CD.png" class="img-fluid" alt="An American In Paris CD">
+              <div class="portfolio-info">
+                <h4>The Napa Valley Duo</h4>
+                <p>An American In Paris, CD</p>
+              </div>
+              <div class="portfolio-links">
+                <a href="assets/img/portfolio/An-American-In-Paris-CD.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="An American In Paris CD"><i class="bx bx-plus"></i></a>
+                <a href="american-in-paris-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/Napa-Valley-Duo-A-Soft-Message-To-You.png" class="img-fluid" alt="The Napa Valley Duo, A Soft Message To You">
+              <div class="portfolio-info">
+                <h4>The Napa Valley Duo</h4>
+                <p>A Soft Message To You, CD</p>
+              </div>
+              <div class="portfolio-links">
+                <a href="assets/img/portfolio/Napa-Valley-Duo-A-Soft-Message-To-You.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="The Napa Valley Duo, A Soft Message To You"><i class="bx bx-plus"></i></a>
+                <a href="napa-valley-duo-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+     
+
+
+
+
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Section -->
+
+    
+
+
+
+
+
+
+
+
+
+
+    <!-- ======= VIDEOS Section ======= -->
+
+
+  
+
+
+
+    <section id="videos" class="faq">
+     
+      <div class="container">
+        <div class="header">
+            <h1>JohnSong Music</h1>
+            <p>Video Lessons, Performances & Audio Collections</p>
+        </div>
+
+           <!-- First Video Gallery Row -->
+           <div class="gallery-section-title">The Art of Music Video Series</div>
+           <div class="video-gallery">
+               <button class="scroll-button scroll-left" onclick="scrollBanner('left', 'videoBanner1')">‹</button>
+               <button class="scroll-button scroll-right" onclick="scrollBanner('right', 'videoBanner1')">›</button>
+               <div class="video-banner" id="videoBanner1">
+                   <div class="video-card" onclick="openVideo('art-of-music-intro')">
+                       <div class="video-thumbnail">
+                           <img id="thumb-art-of-music-intro" alt="The Art of Music · An Introduction">
+                           <div class="play-button"></div>
+                       </div>
+                       <div class="video-info">
+                           <div class="video-title">The Art of Music · An Introduction</div>
+                           <div class="video-description">Jeffrey McFarland-Johnson introduces the basic elements that musicians must embrace and internalize in order to achieve fluency in speaking the language of music.</div>
+                           <div class="video-duration">5:53</div>
+                       </div>
+                   </div>
+
+                   <div class="video-card" onclick="openVideo('art-of-music-lesson-01')">
+                       <div class="video-thumbnail">
+                           <img id="thumb-art-of-music-lesson-01" alt="The Art of Music - Lesson 1 - The Heartbeat">
+                           <div class="play-button"></div>
+                       </div>
+                       <div class="video-info">
+                           <div class="video-title">The Art of Music · Lesson 1: The Heartbeat</div>
+                           <div class="video-description">Jeffrey McFarland-Johnson describes the first element that musicians must embrace; the heartbeat. The heartbeat puts life into musical expression.</div>
+                           <div class="video-duration">6:12</div>
+                       </div>
+                   </div>
+
+                   <div class="video-card" onclick="openVideo('art-of-music-lesson-02')">
+                       <div class="video-thumbnail">
+                           <img id="thumb-art-of-music-lesson-02" alt="The Art Of Music · Lesson 2: The Music Alphabets">
+                           <div class="play-button"></div>
+                       </div>
+                       <div class="video-info">
+                           <div class="video-title">The Art Of Music · Lesson 2: The Music Alphabets</div>
+                           <div class="video-description">Jeffrey McFarland-Johnson discusses the symmetrical array of alphabetic sequences used in speaking the language of music.</div>
+                           <div class="video-duration">5:25</div>
+                       </div>
+                   </div>
+
+                   <div class="video-card" onclick="openVideo('art-of-music-lesson-03')">
+                       <div class="video-thumbnail">
+                           <img id="thumb-art-of-music-lesson-03" alt="The Art Of Music · Lesson 3: Major & Minor Scales">
+                           <div class="play-button"></div>
+                       </div>
+                       <div class="video-info">
+                           <div class="video-title">The Art Of Music · Lesson 3: Major & Minor Scales</div>
+                           <div class="video-description">Jeffrey McFarland-Johnson describes the intervallic organization of the major scale and the three minor scale forms.</div>
+                           <div class="video-duration">5:25</div>
+                       </div>
+                   </div>
+
+                   <div class="video-card" onclick="openVideo('art-of-music-lesson-04')">
+                       <div class="video-thumbnail">
+                           <img id="thumb-art-of-music-lesson-04" alt="The Art Of Music · Lesson 4: The Tonal Pyramid">
+                           <div class="play-button"></div>
+                       </div>
+                       <div class="video-info">
+                           <div class="video-title">The Art Of Music · Lesson 4: The Tonal Pyramid</div>
+                           <div class="video-description">Jeffrey McFarland-Johnson discusses Music Lesson 4, The Tonal Pyramid shown in his new eBook, A Visual Approach To Scales And Chords on GUITAR.</div>
+                           <div class="video-duration">9:30</div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+
+           <!-- Second Video Gallery Row -->
+           <div class="gallery-section-title">Performance & Music Videos</div>
+           <div class="video-gallery">
+               <button class="scroll-button scroll-left" onclick="scrollBanner('left', 'videoBanner2')">‹</button>
+               <button class="scroll-button scroll-right" onclick="scrollBanner('right', 'videoBanner2')">›</button>
+               <div class="video-banner" id="videoBanner2">
+                   <!-- Placeholder video cards for second row -->
+                   <div class="video-card" onclick="openVideo('solo-cello-nv-coffee')">
+                       <div class="video-thumbnail">
+                           <img id="thumb-solo-cello-nv-coffee" alt="The Art of Music, An Introduction by Jeffrey McFarland-Johnson" style="background: linear-gradient(135deg, #6a6a6a, #999); color: white; display: flex; align-items: center; justify-content: center;">
+                           <div class="play-button"></div>
+                       </div>
+                       <div class="video-info">
+                           <div class="video-title">Jeffrey McFarland-Johnson Solo Cello at Napa Valley Coffee Roasting Co., Napa, CA</div>
+                           <div class="video-description">Jeffrey McFarland-Johnson plays solo cello every Friday morning, 9-11 a.m., at the Napa Valley Coffee Roasting Co., 1st & Main Sts., Napa, CA.  This is a video montage of the unique vibe that takes place when he performs solo Bach suites, Dall'Abaco, Supriano, Hildegarde von Bingen, Gershwin, jazz, blues, and impromptu improvisations.  Not to be missed!</div>
+                           <div class="video-duration">0:53</div>
+                       </div>
+                   </div>
+
+                   <div class="video-card" onclick="openVideo('promo-montage')">
+                       <div class="video-thumbnail">
+                           <img id="thumb-promo-montage" alt="Jeffrey McFarland-Johnson Promo Montage" style="background: linear-gradient(135deg, #6a6a6a, #999); color: white; display: flex; align-items: center; justify-content: center;">
+                           <div class="play-button"></div>
+                       </div>
+                       <div class="video-info">
+                           <div class="video-title">Jeffrey McFarland-Johnson Promo Montage</div>
+                           <div class="video-description">Jeffrey McFarland-Johnson brief montage featuring cello (Napa Valley Duo w/Terry Winn), Zitar,  Prince1 (music student) and Stratocaster guitar.</div>
+                           <div class="video-duration">1:41</div>
+                       </div>
+                   </div>
+
+                   <div class="video-card" onclick="openVideo('karitas')">
+                       <div class="video-thumbnail">
+                           <img id="thumb-karitas" alt="Coming Soon" style="background: linear-gradient(135deg, #6a6a6a, #999); color: white; display: flex; align-items: center; justify-content: center;">
+                           <div class="play-button"></div>
+                       </div>
+                       <div class="video-info">
+                           <div class="video-title">Karitas by Hildegard of Bingen (1098-1179), Antiphon, D 157, R 466a</div>
+                           <div class="video-description">Jeffrey McFarland-Johnson performs a composition by Hildegard von Bingen (1070 A.D.), Antiphon, D 157, R 466a, transcribed for drone and violoncello piccolo.</div>
+                           <div class="video-duration">4:17</div>
+                       </div>
+                   </div>
+
+                   <div class="video-card" onclick="openVideo('o-successores')">
+                       <div class="video-thumbnail">
+                           <img id="thumb-o-successores" alt="O successores by Hildegard of Bingen (1098-1179), Antiphon, D164, R 470v" style="background: linear-gradient(135deg, #6a6a6a, #999); color: white; display: flex; align-items: center; justify-content: center;">
+                           <div class="play-button"></div>
+                       </div>
+                       <div class="video-info">
+                           <div class="video-title">O successores by Hildegard of Bingen (1098-1179), Antiphon, D164, R 470v</div>
+                           <div class="video-description">Jeffrey McFarland-Johnson performs an Antiphon, O successores, by Hildegard von Bingen (1098-1179) on violoncello piccolo (copy of an Amati, 1685) with drone (Raagini Digital Electronic Tanpura).  Eternal music that accompanies global change.
+                          </div>
+                           <div class="video-duration">5:40</div>
+                       </div>
+                   </div>
+
+                   <div class="video-card" onclick="openVideo('guitello-bach-cello-suite-I-prelude')">
+                       <div class="video-thumbnail">
+                           <img id="thumb-guitello-bach-cello-suite-I-prelude" alt="Guitello - JS Bach Cello Suite I, Prelude" style="background: linear-gradient(135deg, #6a6a6a, #999); color: white; display: flex; align-items: center; justify-content: center;">
+                           <div class="play-button"></div>
+                       </div>
+                       <div class="video-info">
+                           <div class="video-title">Jeffrey McFarland-Johnson on Guitello - JS Bach Cello Suite I, Prelude</div>
+                           <div class="video-description">Jeffrey McFarland-Johnson performs the Prelude from the 1st Bach solo cello suite on his concert Guitello, a 5-string fretted plucked instrument tuned in 5ths like a cello, custom made by David Heitzman of Napa Guitar Co. (www.napaguitarco.com) at the 150th anniversary celebration of the  Charles Krug winery in St. Helena, CA in the Napa Valley, USA.</div>
+                           <div class="video-duration">2:59</div>
+                       </div>
+                   </div>
+
+                   <div class="video-card" onclick="openVideo('guitello-bach-cello-suite-III-bourree')">
+                    <div class="video-thumbnail">
+                        <img id="thumb-guitello-bach-cello-suite-III-bourree" alt="Jeffrey McFarland-Johnson, Guitello - Bach Cello Suite III, Bourree" style="background: linear-gradient(135deg, #6a6a6a, #999); color: white; display: flex; align-items: center; justify-content: center;">
+                        <div class="play-button"></div>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title">Jeffrey McFarland-Johnson, Guitello - Bach Cello Suite III, Bourree</div>
+                        <div class="video-description">Jeffrey McFarland-Johnson Guitello performance on April 7, 2013 of the Bach cello suites I, II, & III at the Napa United Methodist Church.</div>
+                        <div class="video-duration">4:13</div>
+                    </div>
+                </div>
+
+                <div class="video-card" onclick="openVideo('bach-rock-cello-suite-III-courante')">
+                  <div class="video-thumbnail">
+                      <img id="thumb-bach-rock-cello-suite-III-courante" alt="Bach Rach (Bach Rock) Cello Suite III, Courante" style="background: linear-gradient(135deg, #6a6a6a, #999); color: white; display: flex; align-items: center; justify-content: center;">
+                      <div class="play-button"></div>
+                  </div>
+                  <div class="video-info">
+                      <div class="video-title">Bach Rach (Bach Rock) Cello Suite III, Courante</div>
+                      <div class="video-description">Jeffrey McFarland-Johnson plays a Stratocaster Internationale plugged into a Zvex Nano 1-watt amp head into a Victor projector cab with a Celestion Blue G12 speaker with a Stomp Under Foot Green Muff, SkullyTone Russian Spy, and a Budd-Wah pedal.</div>
+                      <div class="video-duration">3:30</div>
+                  </div>
+              </div>
+
+              <div class="video-card" onclick="openVideo('bach-rock-cello-suite-III-sarabande')">
+                <div class="video-thumbnail">
+                    <img id="thumb-bach-rock-cello-suite-III-sarabande" alt="Bach Rach (Bach Rock) Cello Suite III, Sarabande" style="background: linear-gradient(135deg, #6a6a6a, #999); color: white; display: flex; align-items: center; justify-content: center;">
+                    <div class="play-button"></div>
+                </div>
+                <div class="video-info">
+                    <div class="video-title">Bach Rach (Bach Rock) Cello Suite III, Sarabande</div>
+                    <div class="video-description">Jeffrey McFarland-Johnson plays a Stratocaster Internationale tuned as a 5-string cello into a Zvex 1-watt Nano amp & a Victor projector cabinet with a Celestion Blue G12 speaker.</div>
+                    <div class="video-duration">4:08</div>
+                </div>
+            </div>
+
+            <div class="video-card" onclick="openVideo('bach-cello-suite-5-prelude-intro')">
+              <div class="video-thumbnail">
+                  <img id="thumb-bach-cello-suite-5-prelude-intro" alt="Jeffrey McFarland-Johnson: Bach Cello Suite No.5 - Prelude (Intro)" style="background: linear-gradient(135deg, #6a6a6a, #999); color: white; display: flex; align-items: center; justify-content: center;">
+                  <div class="play-button"></div>
+              </div>
+              <div class="video-info">
+                  <div class="video-title">Jeffrey McFarland-Johnson: Bach Cello Suite No.5 - Prelude (Intro)</div>
+                  <div class="video-description">Jeffrey McFarland-Johnson of the Napa Valley plays the introduction to the Prelude of the solo cello suite No.5 by J.S. Bach at an artist's gallery held at the Wine Train barn in Napa, CA.</div>
+                  <div class="video-duration">3:18</div>
+              </div>
+          </div>
+
+          <div class="video-card" onclick="openVideo('bach-cello-suite-3-prelude')">
+            <div class="video-thumbnail">
+                <img id="thumb-bach-cello-suite-3-prelude" alt="Jeffrey McFarland-Johnson: Bach Cello Suite No.3 - Prelude" style="background: linear-gradient(135deg, #6a6a6a, #999); color: white; display: flex; align-items: center; justify-content: center;">
+                <div class="play-button"></div>
+            </div>
+            <div class="video-info">
+                <div class="video-title">Jeffrey McFarland-Johnson: Bach Cello Suite No.3 - Prelude</div>
+                <div class="video-description">Jeffrey McFarland-Johnson of the Napa Valley plays the Prelude from the cello suite No.3 in C-major by J.S. Bach at an artist's gallery held at the Napa Valley Wine Train barn, Napa, CA.</div>
+                <div class="video-duration">5:28</div>
+            </div>
+        </div>
+
+        <div class="video-card" onclick="openVideo('bach-cello-suite-1-courante')">
+          <div class="video-thumbnail">
+              <img id="thumb-bach-cello-suite-1-courante" alt="Jeffrey McFarland-Johnson: Bach Cello Suite No.1 - Courante" style="background: linear-gradient(135deg, #6a6a6a, #999); color: white; display: flex; align-items: center; justify-content: center;">
+              <div class="play-button"></div>
+          </div>
+          <div class="video-info">
+              <div class="video-title">Jeffrey McFarland-Johnson: Bach Cello Suite No.1 - Courante</div>
+              <div class="video-description">Jeffrey McFarland-Johnson of the Napa Valley plays the Courante from the J.S. Bach solo cello suite No.1 at an artist's gallery held in the Wine Train barn, Napa, CA.</div>
+              <div class="video-duration">3:34</div>
+          </div>
+      </div>
+
+      <div class="video-card" onclick="openVideo('bach-cello-suite-1-allemande')">
+        <div class="video-thumbnail">
+            <img id="thumb-bach-cello-suite-1-allemande" alt="Jeffrey McFarland-Johnson: Bach Cello Suite No.1 - Allemande" style="background: linear-gradient(135deg, #6a6a6a, #999); color: white; display: flex; align-items: center; justify-content: center;">
+            <div class="play-button"></div>
+        </div>
+        <div class="video-info">
+            <div class="video-title">Jeffrey McFarland-Johnson: Bach Cello Suite No.1 - Allemande</div>
+            <div class="video-description">Jeffrey McFarland-Johnson of the Napa Valley plays the Allemande from the cello suite No.1 by J.S. Bach at an artist's studio gallery at the Wine Train barn in Napa, CA.</div>
+            <div class="video-duration">5:44</div>
+        </div>
+    </div>
+
+
+               </div>
+           </div>
+
+           
+        <div id="audio" class="audio-section">
+            <h2>Audio Collections</h2>
+            <div class="audio-grid">
+                <div class="audio-item">
+                    <h3>Looperboard Track Sampler</h3>
+                    <ul class="track-list">
+                        <li>Pachelbel Canon in D</li>
+                        <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+                        <audio class="wp-audio-shortcode" id="audio-603-1" preload="none" style="width: 100%;" controls="controls"><source type="audio/mpeg" src="https://johnsong.com/music/wp-content/uploads/2017/09/Pachelbell-Canon-in-D.mp3?_=1" /><a href="https://johnsong.com/music/wp-content/uploads/2017/09/Pachelbell-Canon-in-D.mp3">https://johnsong.com/music/wp-content/uploads/2017/09/Pachelbell-Canon-in-D.mp3</a></audio>
+                        <li>Dinosaur</li>
+                        <audio class="wp-audio-shortcode" id="audio-603-2" preload="none" style="width: 100%;" controls="controls"><source type="audio/mpeg" src="https://johnsong.com/music/wp-content/uploads/2017/09/Dinosaur.mp3?_=2" /><a href="https://johnsong.com/music/wp-content/uploads/2017/09/Dinosaur.mp3">https://johnsong.com/music/wp-content/uploads/2017/09/Dinosaur.mp3</a></audio>
+                        <li>Summer Drive</li>
+                        <audio class="wp-audio-shortcode" id="audio-603-3" preload="none" style="width: 100%;" controls="controls"><source type="audio/mpeg" src="https://johnsong.com/music/wp-content/uploads/2017/09/Echos.mp3?_=3" /><a href="https://johnsong.com/music/wp-content/uploads/2017/09/Echos.mp3">https://johnsong.com/music/wp-content/uploads/2017/09/Echos.mp3</a></audio>
+                        <li>Space Guiro</li>
+                        <audio class="wp-audio-shortcode" id="audio-603-4" preload="none" style="width: 100%;" controls="controls"><source type="audio/mpeg" src="https://johnsong.com/music/wp-content/uploads/2017/09/Sophia.mp3?_=4" /><a href="https://johnsong.com/music/wp-content/uploads/2017/09/Sophia.mp3">https://johnsong.com/music/wp-content/uploads/2017/09/Sophia.mp3</a></audio>
+                        <li>Kotch (Jamaican)</li>
+                        <audio class="wp-audio-shortcode" id="audio-603-5" preload="none" style="width: 100%;" controls="controls"><source type="audio/mpeg" src="http://johnsong.com/music/wp-content/uploads/2017/09/Kotch-Jamaican.mp3?_=5" /><a href="http://johnsong.com/music/wp-content/uploads/2017/09/Kotch-Jamaican.mp3">http://johnsong.com/music/wp-content/uploads/2017/09/Kotch-Jamaican.mp3</a></audio>
+                        <li>Sophia</li>
+                        <audio class="wp-audio-shortcode" id="audio-603-6" preload="none" style="width: 100%;" controls="controls"><source type="audio/mpeg" src="https://johnsong.com/music/wp-content/uploads/2017/09/Get-Back-Beatles.mp3?_=6" /><a href="https://johnsong.com/music/wp-content/uploads/2017/09/Get-Back-Beatles.mp3">https://johnsong.com/music/wp-content/uploads/2017/09/Get-Back-Beatles.mp3</a></audio>
+                        <li>Get Back (Beatles)</li>
+                        <audio class="wp-audio-shortcode" id="audio-603-7" preload="none" style="width: 100%;" controls="controls"><source type="audio/mpeg" src="https://johnsong.com/music/wp-content/uploads/2017/09/6-Ways-Geo-Benson.mp3?_=7" /><a href="https://johnsong.com/music/wp-content/uploads/2017/09/6-Ways-Geo-Benson.mp3">https://johnsong.com/music/wp-content/uploads/2017/09/6-Ways-Geo-Benson.mp3</a></audio>
+                        <li>6 Ways</li>
+                        <audio class="wp-audio-shortcode" id="audio-603-8" preload="none" style="width: 100%;" controls="controls"><source type="audio/mpeg" src="https://johnsong.com/music/wp-content/uploads/2017/09/Track28.mp3?_=8" /><a href="https://johnsong.com/music/wp-content/uploads/2017/09/Track28.mp3">https://johnsong.com/music/wp-content/uploads/2017/09/Track28.mp3</a></audio>
+                        <li>Shh……Peaceful </li>
+                        <audio class="wp-audio-shortcode" id="audio-603-9" preload="none" style="width: 100%;" controls="controls"><source type="audio/mpeg" src="https://johnsong.com/music/wp-content/uploads/2017/09/Track29.mp3?_=9" /><a href="https://johnsong.com/music/wp-content/uploads/2017/09/Track29.mp3">https://johnsong.com/music/wp-content/uploads/2017/09/Track29.mp3</a></audio>
+                    </ul>
+                </div>
+                
+                <div class="audio-item">
+                    <h3>Pop Rock Cello Sampler</h3>
+                    <ul class="track-list">
+                        <li>Benny And The Jets</li>
+                         <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+                <audio class="wp-audio-shortcode" id="audio-61-1" preload="none" style="width: 100%;" controls="controls"><source type="audio/mpeg" src="https://johnsong.com/music/wp-content/uploads/2017/09/Benny-and-the-Jets.mp3?_=1" /><a href="https://johnsong.com/music/wp-content/uploads/2017/09/Benny-and-the-Jets.mp3">https://johnsong.com/music/wp-content/uploads/2017/09/Benny-and-the-Jets.mp3</a></audio>
+                        <li>Dreams</li>
+                        <audio class="wp-audio-shortcode" id="audio-61-2" preload="none" style="width: 100%;" controls="controls"><source type="audio/mpeg" src="https://johnsong.com/music/wp-content/uploads/2017/09/Dreams.mp3?_=2" /><a href="https://johnsong.com/music/wp-content/uploads/2017/09/Dreams.mp3">https://johnsong.com/music/wp-content/uploads/2017/09/Dreams.mp3</a></audio>
+                        <li>I Feel Good</li>
+                        <audio class="wp-audio-shortcode" id="audio-61-3" preload="none" style="width: 100%;" controls="controls"><source type="audio/mpeg" src="https://johnsong.com/music/wp-content/uploads/2017/09/I-Feel-Good.mp3?_=3" /><a href="https://johnsong.com/music/wp-content/uploads/2017/09/I-Feel-Good.mp3">https://johnsong.com/music/wp-content/uploads/2017/09/I-Feel-Good.mp3</a></audio>
+                        <li>I Shot The Sheriff</li>
+                        <audio class="wp-audio-shortcode" id="audio-61-4" preload="none" style="width: 100%;" controls="controls"><source type="audio/mpeg" src="https://johnsong.com/music/wp-content/uploads/2017/09/I-Shot-The-Sheriff.mp3?_=4" /><a href="https://johnsong.com/music/wp-content/uploads/2017/09/I-Shot-The-Sheriff.mp3">https://johnsong.com/music/wp-content/uploads/2017/09/I-Shot-The-Sheriff.mp3</a></audio>
+                        <li>If 60s Were 90s</li>
+                        <audio class="wp-audio-shortcode" id="audio-61-5" preload="none" style="width: 100%;" controls="controls"><source type="audio/mpeg" src="https://johnsong.com/music/wp-content/uploads/2017/09/If-60s-Were-90s.mp3?_=5" /><a href="https://johnsong.com/music/wp-content/uploads/2017/09/If-60s-Were-90s.mp3">https://johnsong.com/music/wp-content/uploads/2017/09/If-60s-Were-90s.mp3</a></audio>
+                        <li>Low Spark of High Heel Boys</li>
+                        <audio class="wp-audio-shortcode" id="audio-61-6" preload="none" style="width: 100%;" controls="controls"><source type="audio/mpeg" src="https://johnsong.com/music/wp-content/uploads/2017/09/Low-Spark-of-High-Heel-Boys.mp3?_=6" /><a href="https://johnsong.com/music/wp-content/uploads/2017/09/Low-Spark-of-High-Heel-Boys.mp3">https://johnsong.com/music/wp-content/uploads/2017/09/Low-Spark-of-High-Heel-Boys.mp3</a></audio>
+                        <li>Spirits In The Material World</li>
+                        <audio class="wp-audio-shortcode" id="audio-61-7" preload="none" style="width: 100%;" controls="controls"><source type="audio/mpeg" src="https://johnsong.com/music/wp-content/uploads/2017/09/Spirits-Material-World-JMJ-Vc.mp3?_=7" /><a href="https://johnsong.com/music/wp-content/uploads/2017/09/Spirits-Material-World-JMJ-Vc.mp3">https://johnsong.com/music/wp-content/uploads/2017/09/Spirits-Material-World-JMJ-Vc.mp3</a></audio>
+                        <li>The Way Of The World</li>
+                        <audio class="wp-audio-shortcode" id="audio-61-8" preload="none" style="width: 100%;" controls="controls"><source type="audio/mpeg" src="https://johnsong.com/music/wp-content/uploads/2017/09/The-Way-of-the-World.mp3?_=8" /><a href="https://johnsong.com/music/wp-content/uploads/2017/09/The-Way-of-the-World.mp3">https://johnsong.com/music/wp-content/uploads/2017/09/The-Way-of-the-World.mp3</a></audio>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+      <!-- Video Overlay Modal -->
+      <div class="video-overlay" id="videoOverlay" onclick="closeVideo(event)">
+        <div class="video-modal">
+            <button class="close-button" onclick="closeVideo()">&times;</button>
+                   <iframe id="youtubePlayer" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                      allowfullscreen>
+
+                  </iframe>
+        </div>
+    </div>
+</section>
+
+<script>
+    // YouTube video data - provide YouTube video IDs
+    const videoData = {
+        'art-of-music-intro': {
+            videoId: 'wqTFkMxDX4Q',
+            title: 'The Art of Music, An Introduction by Jeffrey McFarland-Johnson'
+        },
+        'art-of-music-lesson-01': {
+            videoId: 'KyuLw88lxn4',
+            title: 'The Art of Music - Lesson 1 - The Heartbeat'
+        },
+        'art-of-music-lesson-02': {
+            videoId: 'bRWiqMqE10M',
+            title: 'The Art Of Music - Lesson 2, The Music Alphabets'
+        },
+        'art-of-music-lesson-03': {
+            videoId: 'TTpJLOqeYzg',
+            title: 'The Art Of Music: Lesson #3 - Major & Minor Scales'
+        },
+        'art-of-music-lesson-04': {
+            videoId: 'S7KbTc8Umcg',
+            title: 'The Art Of Music, Lesson #4 - The Tonal Pyramid'
+        },
+        // Placeholder entries for second row - you can update these with actual video IDs
+        'solo-cello-nv-coffee': {
+            videoId: 'MnYQBegtZDA',
+            title: 'Jeffrey McFarland-Johnson Solo Cello at Napa Valley Coffee Roasting Co., Napa, CA'
+        },
+        'promo-montage': {
+            videoId: 'Jdy9j8na2Lc',
+            title: 'Jeffrey McFarland-Johnson Promo Montage'
+        },
+        'karitas': {
+            videoId: 'ZpMYUFNBW2M',
+            title: 'Karitas by Hildegard of Bingen (1098-1179), Antiphon, D 157, R 466a'
+        },
+        'o-successores': {
+            videoId: '0qEX7g3SgQY',
+            title: 'O successores by Hildegard of Bingen (1098-1179), Antiphon, D164, R 470v'
+        },
+        'guitello-bach-cello-suite-I-prelude': {
+            videoId: 'cfASgnCuEco',
+            title: 'Jeffrey McFarland-Johnson plays the Guitello - JS Bach Cello Suite I, Prelude'
+        },
+
+        'guitello-bach-cello-suite-III-bourree': {
+            videoId: 'etPD9d-AatI',
+            title: 'Jeffrey McFarland-Johnson, Guitello - Bach Cello Suite III, Bourree'
+        },
+        'bach-rock-cello-suite-III-courante': {
+            videoId: 'O7PwSvdhd64',
+            title: 'Bach Rach (Bach Rock) Cello Suite III, Courante'
+        },
+        'bach-rock-cello-suite-III-sarabande': {
+            videoId: 'lp9CTcU209A',
+            title: 'Bach Rach (Bach Rock) Cello Suite III, Sarabande'
+        },
+        'bach-cello-suite-5-prelude-intro': {
+            videoId: 'ndCSmA8e9sk',
+            title: 'Jeffrey McFarland-Johnson: Bach Cello Suite No.5 - Prelude (Intro)'
+        },
+        'bach-cello-suite-3-prelude': {
+            videoId: 'BnQblLbRQpY',
+            title: 'Jeffrey McFarland-Johnson: Bach Cello Suite No.3 - Prelude'
+        },
+        'bach-cello-suite-1-courante': {
+            videoId: 'bsWrtXOOHXY',
+            title: 'Jeffrey McFarland-Johnson: Bach Cello Suite No.1 - Courante'
+        },
+        'bach-cello-suite-1-allemande': {
+            videoId: '9_mPPrB6TkY',
+            title: 'Jeffrey McFarland-Johnson: Bach Cello Suite No.1 - Allemande'
+        }
+      
+    };
+
+    // Load YouTube thumbnails automatically
+    function loadYouTubeThumbnails() {
+        Object.keys(videoData).forEach(videoKey => {
+            const videoId = videoData[videoKey].videoId;
+            const thumbnailImg = document.getElementById(`thumb-${videoKey}`);
+            
+            if (thumbnailImg && videoId) {
+                console.log(`Loading thumbnail for ${videoKey}: ${videoId}`);
+                
+                const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+                thumbnailImg.src = thumbnailUrl;
+                
+                thumbnailImg.onload = function() {
+                    console.log(`Thumbnail loaded successfully for ${videoKey}`);
+                    this.style.opacity = '1';
+                };
+                
+                thumbnailImg.onerror = function() {
+                    console.log(`Thumbnail failed to load for ${videoKey}, trying fallback`);
+                    this.onerror = null;
+                    this.src = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
+                };
+                
+                thumbnailImg.style.opacity = '0';
+                thumbnailImg.style.transition = 'opacity 0.3s ease';
+            } else if (thumbnailImg && videoKey.includes('placeholder')) {
+                // Set placeholder image for coming soon videos
+                thumbnailImg.style.background = 'linear-gradient(135deg, #6a6a6a, #999)';
+                thumbnailImg.style.color = 'white';
+                thumbnailImg.style.display = 'flex';
+                thumbnailImg.style.alignItems = 'center';
+                thumbnailImg.style.justifyContent = 'center';
+                thumbnailImg.innerHTML = '<span style="font-size: 18px; font-weight: bold;">Coming Soon</span>';
+            }
+        });
+    }
+
+    function openVideo(videoId) {
+    console.log(`Opening video: ${videoId}`);
+    const overlay = document.getElementById('videoOverlay');
+    const youtubePlayer = document.getElementById('youtubePlayer');
+    
+    if (videoData[videoId] && videoData[videoId].videoId) {
+        const embedUrl = `https://www.youtube.com/embed/${videoData[videoId].videoId}?autoplay=1&rel=0&enablejsapi=1&playsinline=1&modestbranding=1`;
+        console.log(`Setting iframe src to: ${embedUrl}`);
+        
+        youtubePlayer.src = embedUrl;
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        
+        // Add load event listener for debugging
+        youtubePlayer.onload = function() {
+            console.log('YouTube iframe loaded successfully');
+        };
+    } else {
+        console.error(`Video data not found for: ${videoId}`);
+        alert('Video not available at this time.');
+    }
+}
+
+    function closeVideo(event) {
+        if (event && event.target !== event.currentTarget) {
+            return;
+        }
+        
+        const overlay = document.getElementById('videoOverlay');
+        const youtubePlayer = document.getElementById('youtubePlayer');
+        
+        overlay.classList.remove('active');
+        
+        const newIframe = document.createElement('iframe');
+        newIframe.id = 'youtubePlayer';
+        newIframe.allowFullscreen = true;
+        
+        youtubePlayer.parentNode.replaceChild(newIframe, youtubePlayer);
+        
+        document.body.style.overflow = 'auto';
+    }
+
+    function scrollBanner(direction, bannerId) {
+        const banner = document.getElementById(bannerId);
+        const scrollAmount = 300;
+        
+        if (direction === 'left') {
+            banner.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        } else {
+            banner.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+    }
+
+    // Close video on escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeVideo();
+        }
+    });
+
+    // Prevent video modal from closing when clicking on video
+    document.querySelector('.video-modal').addEventListener('click', function(event) {
+        event.stopPropagation();
+    });
+
+    // Load thumbnails when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        loadYouTubeThumbnails();
+    });
+</script>
+
+    </section><!-- End VIDEOS Section -->
+
+
+
+
+
+
+
+
+
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact section-bg">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Contact Johnsong Music</h2>
+        </div>
+
+ 
+
+        <div class="info">
+
+          <div class="col-lg-12 d-flex flex-column justify-contents-center aos-init aos-animate" data-aos="fade-left">
+            <p style="font-size: 20px !important">From intimate gatherings to grand celebrations, Jeffrey McFarland-Johnson brings a distinctive musical presence to Napa Valley’s vibrant cultural scene. Get in touch to explore how his music can complement your event or enrich your musical&nbsp;journey.</p>
+           
+           </div>
+          <div class="col-lg-4 aos-init aos-animate" data-aos="zoom-in">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>CONTACT:</h4>
+                
+               
+<p>JohnSong Music</p>
+ <p>
+Jeffrey McFarland-Johnson<br>
+P.O. Box 3646<br>
+Napa, CA 94558
+</p>
+
+
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p><a href="mailto:info@johnsong.com">info@johnsong.com</a>
+ 
+                  <br>
+                  <a href="mailto:jeff@johnsong.com">jeff@johnsong.com</a></p>
+              </div>
+              </div>
+
+              
+            
+           
+            
+
+          </div>
+          </div>
+            </div>
+            
+           
+    
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>Johnsong Music</h3>
+              <p>Jeffrey McFarland-Johnson<br>
+                P.O. Box 3646<br>
+                Napa, CA 94558<br><br>
+                <a style="color: #fff !important" href="mailto:jeff@johnsong.com">jeff@johnsong.com</a></p>
+              </p>
+            
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#hero">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#about">About</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#audio">Audio</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#products">Products</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#videos">Videos</a></li>
+              
+            
+            </ul>
+          </div>
+
+ 
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <div class="social-links mt-3">
+              <!--<a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>-->
+               <a href="https://www.facebook.com/Guitello" class="facebook"><i class="bx bxl-facebook">Guitello on Facebook</i></a>
+              <!-- <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>-->
+              <!-- <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>-->
+              <!-- <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>-->
+             </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright 2025 <strong><span>Johnsong Music</span></strong>. All Rights Reserved
+      </div>
+
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  
+  
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+
+  <script>
+    
+
+    // Initialize dropdowns
+    document.querySelectorAll('.dropdown-header').forEach(header => {
+        header.addEventListener('click', () => {
+            const content = header.nextElementSibling;
+            const isActive = header.classList.contains('active');
+            
+            // Close all dropdowns
+            document.querySelectorAll('.dropdown-header').forEach(h => h.classList.remove('active'));
+            document.querySelectorAll('.dropdown-content').forEach(c => c.classList.remove('active'));
+            
+            // Open clicked dropdown if it wasn't active
+            if (!isActive) {
+                header.classList.add('active');
+                content.classList.add('active');
+            }
+        });
+    });
+
+    
+</script>
+
+    
+</body>
+
+</html>
