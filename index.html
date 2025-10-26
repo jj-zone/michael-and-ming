@@ -1,33 +1,13 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Michael and Ming</title>
-  <meta content="Michael and Ming - Two spirited shelter cat brothers" name="description">
-  <meta content="Michael and Ming, cats, shelter cats, cat brothers" name="keywords">
-
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
+  <title>Michael and Ming - Hero Fix</title>
+  
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Bangers" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-
+  
   <style>
     * {
       margin: 0;
@@ -42,691 +22,197 @@
       line-height: 1.6;
     }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0px;
+    /* Hero Section - FIXED */
+    #hero {
+      position: relative !important;
+      width: 100% !important;
+      height: 100vh !important;
+      min-height: 600px !important;
+      overflow: hidden !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      display: flex !important;
+      align-items: center !important;
     }
 
-    .header {
+    /* Video Background Layer */
+    .hero-video-bg {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      z-index: 1 !important;
+      overflow: hidden !important;
+    }
+
+    .hero-video-bg iframe {
+      position: absolute !important;
+      top: 50% !important;
+      left: 50% !important;
+      width: 100vw !important;
+      height: 56.25vw !important;
+      min-height: 100vh !important;
+      min-width: 177.77vh !important;
+      transform: translate(-50%, -50%) !important;
+      border: none !important;
+      pointer-events: none !important;
+    }
+
+    /* Dark Overlay for Better Text Readability */
+    .hero-overlay {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      background: rgba(0, 0, 0, 0.4) !important;
+      z-index: 2 !important;
+    }
+
+    /* Content Container - Above Video */
+    .hero-content {
+      position: relative !important;
+      z-index: 10 !important;
+      width: 100% !important;
+      padding: 0 15px !important;
+    }
+
+    .hero-text-box {
+      background: rgba(0, 0, 0, 0.85) !important;
+      padding: 40px !important;
+      border-radius: 10px !important;
+      backdrop-filter: blur(10px) !important;
+      max-width: 800px !important;
+    }
+
+    .hero-text-box h1 {
+      color: #fff !important;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9) !important;
+      font-family: 'Bangers', cursive !important;
+      letter-spacing: 2px !important;
+      font-size: 3.5rem !important;
+      margin-bottom: 20px !important;
+      line-height: 1.2 !important;
+    }
+
+    .hero-text-box h2 {
+      color: #fff !important;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9) !important;
+      font-size: 1.5rem !important;
+      margin-bottom: 30px !important;
+      line-height: 1.6 !important;
+      font-weight: 400 !important;
+    }
+
+    .btn-get-started {
+      display: inline-block !important;
+      padding: 15px 40px !important;
+      background: #ff6b35 !important;
+      color: white !important;
+      text-decoration: none !important;
+      border-radius: 50px !important;
+      font-weight: bold !important;
+      font-size: 18px !important;
+      transition: all 0.3s ease !important;
+      cursor: pointer !important;
+      box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4) !important;
+    }
+
+    .btn-get-started:hover {
+      background: #ff5722 !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 6px 20px rgba(255, 107, 53, 0.6) !important;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .hero-text-box {
+        padding: 30px 20px !important;
+      }
+
+      .hero-text-box h1 {
+        font-size: 2rem !important;
+      }
+
+      .hero-text-box h2 {
+        font-size: 1.2rem !important;
+      }
+
+      .btn-get-started {
+        font-size: 16px !important;
+        padding: 12px 30px !important;
+      }
+
+      #hero {
+        height: 80vh !important;
+        min-height: 500px !important;
+      }
+    }
+
+    /* About Section */
+    .about-section {
+      padding: 80px 20px;
+      background: #ffffff;
       text-align: center;
-      margin-bottom: 40px;
-      padding: 20px 0;
-      border-bottom: 2px solid #ff6b35;
     }
 
-    .header h1 {
+    .about-section h3 {
+      font-family: 'Bangers', cursive;
       font-size: 2.5rem;
       color: #2c2c2c;
-      margin-bottom: 10px;
-      font-family: 'Bangers', cursive;
-    }
-
-    .header p {
-      font-size: 1.1rem;
-      color: #666;
-      font-style: italic;
-      font-family: 'Bangers', cursive;
-    }
-
-    .video-gallery {
-      position: relative;
-      margin-bottom: 40px;
-      overflow: hidden;
-      padding: 10px 0;
-    }
-
-    .video-banner {
-      display: flex;
-      gap: 20px;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      padding: 10px;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-    }
-
-    .video-banner::-webkit-scrollbar {
-      display: none;
-    }
-
-    .scroll-button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 50px;
-      height: 50px;
-      background: rgba(255, 255, 255, 0.95);
-      border: 2px solid #ff6b35;
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      color: #ff6b35;
-      z-index: 10;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-
-    .scroll-button:hover {
-      background: #ff6b35;
-      color: white;
-      transform: translateY(-50%) scale(1.1);
-    }
-
-    .scroll-left {
-      left: 10px;
-    }
-
-    .scroll-right {
-      right: 10px;
-    }
-
-    .video-card {
-      background: #fff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-      transition: all 0.3s ease;
-      cursor: pointer;
-      position: relative;
-      width: 320px;
-      flex-shrink: 0;
-    }
-
-    .video-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.12);
-    }
-
-    .video-thumbnail {
-      position: relative;
-      width: 100%;
-      height: 180px;
-      background: linear-gradient(135deg, #6a6a6a, #999);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .video-thumbnail img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-
-    .video-card:hover .video-thumbnail img {
-      transform: scale(1.05);
-    }
-
-    .play-button {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 60px;
-      height: 60px;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-      backdrop-filter: blur(10px);
-    }
-
-    .play-button::after {
-      content: '';
-      width: 0;
-      height: 0;
-      border-left: 18px solid #ff6b35;
-      border-top: 12px solid transparent;
-      border-bottom: 12px solid transparent;
-      margin-left: 4px;
-    }
-
-    .video-card:hover .play-button {
-      background: rgba(255, 255, 255, 1);
-      transform: translate(-50%, -50%) scale(1.1);
-    }
-
-    .video-info {
-      padding: 20px;
-    }
-
-    .video-title {
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: #2c2c2c;
-      margin-bottom: 8px;
-    }
-
-    .video-description {
-      color: #666;
-      font-size: 0.9rem;
-      margin-bottom: 10px;
-    }
-
-    .video-duration {
-      color: #999;
-      font-size: 0.8rem;
-      font-style: italic;
-    }
-
-    .video-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.9);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-      animation: fadeIn 0.3s ease;
-    }
-
-    .video-overlay.active {
-      display: flex;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    .video-modal {
-      position: relative;
-      max-width: 95vw;
-      max-height: 95vh;
-      background: #000;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-
-    .video-modal iframe {
-      width: 100%;
-      height: auto;
-      max-height: 90vh;
-      aspect-ratio: 16/9;
-      border: none;
-    }
-
-    @media (min-width: 1024px) {
-      .video-modal {
-        max-width: 80vw;
-        max-height: 85vh;
-      }
-      
-      .video-modal iframe {
-        max-height: 80vh;
-        width: 100%;
-        min-height: 60vh;
-      }
-    }
-
-    .close-button {
-      position: absolute;
-      top: -40px;
-      right: 0;
-      background: #fff;
-      border: none;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      color: #333;
-      transition: all 0.3s ease;
-    }
-
-    .close-button:hover {
-      background: #f0f0f0;
-      transform: scale(1.1);
-    }
-
-    .gallery-section-title {
-      font-size: 1.5rem;
-      color: #2c2c2c;
       margin-bottom: 20px;
-      padding-left: 10px;
-      border-left: 4px solid #ff6b35;
     }
 
-    .affiliate-disclaimer {
-      font-size: 0.75rem;
-      color: #888;
-      padding: 15px;
-      margin-top: 20px;
-      background: #f9f9f9;
-      border-radius: 8px;
-      line-height: 1.5;
-    }
-
-    .hero-video-container {
-      position: relative;
-      width: 100%;
-      height: 500px;
-      overflow: hidden;
-    }
-
-    .hero-video-container iframe {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 100vw;
-      height: 56.25vw;
-      min-height: 100vh;
-      min-width: 177.77vh;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-    }
-
-    @media (max-width: 768px) {
-      .video-card {
-        width: 280px;
-      }
-      
-      .video-thumbnail {
-        height: 157px;
-      }
-      
-      .header h1 {
-        font-size: 2rem;
-      }
-      
-      .video-modal {
-        max-width: 95vw;
-      }
-
-      .scroll-button {
-        width: 40px;
-        height: 40px;
-        font-size: 16px;
-      }
-
-      .hero-video-container {
-        height: 300px;
-      }
+    .about-section p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #333;
+      max-width: 800px;
+      margin: 0 auto 20px;
     }
   </style>
 </head>
 
 <body>
-
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center" style="z-index: 9999 !important;">
-    <div class="container d-flex align-items-center">
-      <img src="assets/img/Michael-and-Ming-logo-image.png" style="width: 70px; margin-right: 15px;" class="img-fluid" alt="Michael and Ming logo">
-      <div class="logo me-auto">
-        <h1><a style="color: #222222; line-height: 30px !important; font-family: 'Bangers', cursive; letter-spacing: 1px;" href="index.html">MICHAEL AND MING</a></h1>
-      </div>
-
-      <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#videos">Episodes</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav>
-
-      <div class="header-social-links d-flex align-items-center">
-        <a href="https://www.youtube.com/@MichaelAndMing" class="youtube"><i class="bi bi-youtube"></i></a>
-      </div>
-
-    </div>
-  </header>
-
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" style="position: relative !important; width: 100% !important; height: 100vh !important; min-height: 600px !important; overflow: hidden !important; padding: 0 !important; margin: 0 !important; display: block !important; margin-top: 90px !important;">
-    <div style="position: absolute !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important; z-index: 1 !important; pointer-events: none !important;">
-      <iframe src="https://www.youtube.com/embed/TajoKa9oJaU?autoplay=1&mute=1&loop=1&playlist=TajoKa9oJaU&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1" 
-              style="position: absolute !important; top: 50% !important; left: 50% !important; width: 100vw !important; height: 56.25vw !important; min-height: 100vh !important; min-width: 177.77vh !important; transform: translate(-50%, -50%) !important; border: none !important;"
-              title="Michael and Ming Video" 
-              frameborder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              allowfullscreen>
+  <!-- Hero Section -->
+  <section id="hero">
+    <!-- Video Background Layer (z-index: 1) -->
+    <div class="hero-video-bg">
+      <iframe 
+        src="https://www.youtube.com/embed/TajoKa9oJaU?autoplay=1&mute=1&loop=1&playlist=TajoKa9oJaU&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1" 
+        title="Michael and Ming Video" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
       </iframe>
     </div>
-    <div class="container" style="position: relative !important; z-index: 100 !important; height: 100% !important; display: flex !important; align-items: center !important; pointer-events: none !important;">
-      <div class="row" style="width: 100% !important;">
-        <div class="col-lg-8 pt-5 pt-lg-0 d-flex flex-column justify-content-center" data-aos="fade-up" style="background: rgba(0,0,0,0.85) !important; padding: 40px !important; border-radius: 10px !important; backdrop-filter: blur(5px) !important; pointer-events: auto !important;">
-          <div style="display: block !important; visibility: visible !important; opacity: 1 !important;">
-            <h1 style="color: #fff !important; text-shadow: 3px 3px 6px rgba(0,0,0,0.9) !important; font-family: 'Bangers', cursive !important; letter-spacing: 2px !important; font-size: 3.5rem !important; margin-bottom: 20px !important; display: block !important; visibility: visible !important; opacity: 1 !important; line-height: 1.2 !important;">Meet Michael and Ming</h1>
-            <h2 style="color: #fff !important; text-shadow: 2px 2px 4px rgba(0,0,0,0.9) !important; font-size: 1.5rem !important; margin-bottom: 30px !important; line-height: 1.6 !important; display: block !important; visibility: visible !important; opacity: 1 !important; font-weight: 400 !important;">Two spirited brothers who went from shelter cats to stealing the show in their forever home!</h2>
-            <a href="#about" class="btn-get-started scrollto" style="display: inline-block !important; padding: 15px 40px !important; background: #ff6b35 !important; color: white !important; text-decoration: none !important; border-radius: 50px !important; font-weight: bold !important; font-size: 18px !important; transition: all 0.3s ease !important; cursor: pointer !important; visibility: visible !important; opacity: 1 !important; position: relative !important; pointer-events: auto !important;">Learn about Michael and Ming</a>
-          </div>
-        </div>
+
+    <!-- Dark Overlay (z-index: 2) -->
+    <div class="hero-overlay"></div>
+
+    <!-- Content Layer (z-index: 10) -->
+    <div class="hero-content">
+      <div class="hero-text-box">
+        <h1>Meet Michael and Ming</h1>
+        <h2>Two spirited brothers who went from shelter cats to stealing the show in their forever home!</h2>
+        <a href="#about" class="btn-get-started">Learn about Michael and Ming</a>
       </div>
     </div>
   </section>
 
-  <main id="main">
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about" style="padding: 80px 0 !important; background: #ffffff !important; position: relative !important; z-index: 100 !important; display: block !important; visibility: visible !important; opacity: 1 !important;">
-      <div class="container" style="display: block !important; visibility: visible !important; opacity: 1 !important;">
-        <div class="row" style="display: flex !important; visibility: visible !important; opacity: 1 !important;">
-          <div class="col-lg-3" data-aos="zoom-in" style="display: block !important; visibility: visible !important; opacity: 1 !important;">
-            <img src="assets/img/michael-and-ming-photo.jpg" class="img-fluid" alt="Michael and Ming" style="border-radius: 8px !important; box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important; max-width: 100% !important; height: auto !important; display: block !important; visibility: visible !important; opacity: 1 !important;">
-          </div>
-          <div class="col-lg-9 d-flex flex-column justify-content-center" data-aos="fade-left" style="display: flex !important; visibility: visible !important; opacity: 1 !important;">
-            <div class="content pt-4 pt-lg-0" style="display: block !important; visibility: visible !important; opacity: 1 !important;">
-              <h3 style="color: #2c2c2c !important; margin-bottom: 20px !important; font-family: 'Bangers', cursive !important; font-size: 2.5rem !important; letter-spacing: 1px !important; display: block !important; visibility: visible !important; opacity: 1 !important;">About Michael and Ming</h3>
-              <p style="color: #333 !important; font-size: 18px !important; line-height: 1.8 !important; margin-bottom: 20px !important; font-weight: 400 !important; display: block !important; visibility: visible !important; opacity: 1 !important;">
-                Meet Michael and Ming, two spirited brothers who went from shelter cats to ruling the roost in their forever home! These lively kitties have captured everyone's hearts and are now seizing the spotlight on YouTube. Whether they're tearing through the house on a wild chase, curled up for a cozy cuddle session, or unleashing chaos with their favorite toys, these two are guaranteed to keep you on the edge of your seat and leave you grinning from ear to ear.
-              </p>
-              <p style="color: #333 !important; font-size: 18px !important; line-height: 1.8 !important; margin-bottom: 20px !important; font-weight: 400 !important; display: block !important; visibility: visible !important; opacity: 1 !important;">
-                Michael is physically stronger but shy and afraid of a lot of things, while Ming is smaller in stature but calm, quick, and cool most of the time and isn't afraid of much. Together, they create the perfect dynamic duo that will entertain and warm your heart!
-              </p>
-              <p style="color: #333 !important; font-size: 18px !important; line-height: 1.8 !important; margin-bottom: 20px !important; display: block !important; visibility: visible !important; opacity: 1 !important;">
-                <strong style="color: #ff6b35 !important; font-size: 20px !important; display: inline !important; visibility: visible !important; opacity: 1 !important;">Subscribe now to join the Michael and Ming fan club and never miss an adventure!</strong>
-              </p>
-              <p style="color: #333 !important; font-size: 18px !important; line-height: 1.8 !important; margin-bottom: 30px !important; font-weight: 400 !important; display: block !important; visibility: visible !important; opacity: 1 !important;">
-                For more information, visit <a href="https://www.youtube.com/@MichaelAndMing" target="_blank" style="color: #ff6b35 !important; text-decoration: none !important; font-weight: bold !important; border-bottom: 2px solid #ff6b35 !important; display: inline !important; visibility: visible !important; opacity: 1 !important;">youtube.com/@MichaelAndMing</a>.
-              </p>
-              
-              <div class="affiliate-disclaimer" style="background: #f5f5f5 !important; padding: 20px !important; border-radius: 8px !important; border-left: 4px solid #ff6b35 !important; display: block !important; visibility: visible !important; opacity: 1 !important;">
-                <strong style="color: #333 !important; display: inline !important; visibility: visible !important; opacity: 1 !important;">AFFILIATES DISCLAIMER:</strong> <span style="color: #666 !important; font-size: 14px !important; line-height: 1.6 !important; display: inline !important; visibility: visible !important; opacity: 1 !important;">Certain Michael and Ming YouTube channel video descriptions may contain links to affiliate websites, and we receive an affiliate commission for any purchases made by you on the affiliate website using such links. The Michael and Ming channel are participants in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for us to earn advertising fees by linking to Amazon.com and affiliated websites.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======= VIDEOS Section ======= -->
-    <section id="videos" class="faq">
-      <div class="container">
-        <div class="header">
-          <h1>Michael and Ming</h1>
-          <p>Episodes</p>
-        </div>
-
-        <div class="gallery-section-title">Michael and Ming Episodes</div>
-        <div class="video-gallery">
-          <button class="scroll-button scroll-left" onclick="scrollBanner('left', 'videoBanner1')">‹</button>
-          <button class="scroll-button scroll-right" onclick="scrollBanner('right', 'videoBanner1')">›</button>
-          <div class="video-banner" id="videoBanner1">
-            
-            <div class="video-card" onclick="openVideo('halloween-wig')">
-              <div class="video-thumbnail">
-                <img id="thumb-halloween-wig" alt="Michael and Ming Versus The Halloween Wig">
-                <div class="play-button"></div>
-              </div>
-              <div class="video-info">
-                <div class="video-title">Michael and Ming Versus The Halloween Wig</div>
-                <div class="video-description">Watch as Michael and Ming encounter a mysterious Halloween wig! How will these brave brothers react?</div>
-              </div>
-            </div>
-
-            <div class="video-card" onclick="openVideo('litter-box')">
-              <div class="video-thumbnail">
-                <img id="thumb-litter-box" alt="The Ultimate Litter Box Setup">
-                <div class="play-button"></div>
-              </div>
-              <div class="video-info">
-                <div class="video-title">The Ultimate Litter Box Setup</div>
-                <div class="video-description">Discover the perfect litter box setup that keeps Michael and Ming happy and your home fresh!</div>
-              </div>
-            </div>
-
-            <div class="video-card" onclick="openVideo('favorite-toy')">
-              <div class="video-thumbnail">
-                <img id="thumb-favorite-toy" alt="Michael and Ming's Favorite New Toy">
-                <div class="play-button"></div>
-              </div>
-              <div class="video-info">
-                <div class="video-title">Michael and Ming's Favorite New Toy</div>
-                <div class="video-description">See what toy has captured the hearts of these playful brothers!</div>
-              </div>
-            </div>
-
-            <div class="video-card" onclick="openVideo('porch-patrol')">
-              <div class="video-thumbnail">
-                <img id="thumb-porch-patrol" alt="Michael and Ming in Porch Patrol">
-                <div class="play-button"></div>
-              </div>
-              <div class="video-info">
-                <div class="video-title">Michael and Ming in Porch Patrol</div>
-                <div class="video-description">Join Michael and Ming as they keep watch over their territory from the porch!</div>
-              </div>
-            </div>
-
-            <div class="video-card" onclick="openVideo('climbing-tower')">
-              <div class="video-thumbnail">
-                <img id="thumb-climbing-tower" alt="7 Reasons Why Michael and Ming are Obsessed with their Cat Climbing Tower">
-                <div class="play-button"></div>
-              </div>
-              <div class="video-info">
-                <div class="video-title">7 Reasons Why Michael and Ming are Obsessed with their Cat Climbing Tower</div>
-                <div class="video-description">Find out why this climbing tower has become Michael and Ming's favorite hangout spot!</div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-      <!-- Video Overlay Modal -->
-      <div class="video-overlay" id="videoOverlay" onclick="closeVideo(event)">
-        <div class="video-modal">
-          <button class="close-button" onclick="closeVideo()">&times;</button>
-          <iframe id="youtubePlayer" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                  allowfullscreen>
-          </iframe>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact section-bg">
-      <div class="container">
-        <div class="section-title" data-aos="fade-up">
-          <h2 style="font-family: 'Bangers', cursive; letter-spacing: 1px; font-size: 2.5rem;">Contact Michael and Ming</h2>
-        </div>
-
-        <div class="info">
-          <div class="col-lg-12 d-flex flex-column justify-content-center aos-init aos-animate" data-aos="fade-left">
-            <p style="font-size: 20px !important; margin-bottom: 30px; text-align: center;">Have questions for Michael and Ming? Want to share your own cat stories? We'd love to hear from you!</p>
-            
-            <div style="max-width: 100%; margin: 0 auto; background: white; padding: 40px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-              <form action="#" method="post" style="width: 100%;">
-                <div class="row">
-                  <div class="col-md-6" style="margin-bottom: 20px;">
-                    <label for="name" style="display: block; margin-bottom: 8px; font-weight: bold; color: #333;">Your Name *</label>
-                    <input type="text" id="name" name="name" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px;">
-                  </div>
-                  
-                  <div class="col-md-6" style="margin-bottom: 20px;">
-                    <label for="email" style="display: block; margin-bottom: 8px; font-weight: bold; color: #333;">Your Email *</label>
-                    <input type="email" id="email" name="email" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px;">
-                  </div>
-                </div>
-                
-                <div style="margin-bottom: 20px;">
-                  <label for="subject" style="display: block; margin-bottom: 8px; font-weight: bold; color: #333;">Subject</label>
-                  <input type="text" id="subject" name="subject" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px;">
-                </div>
-                
-                <div style="margin-bottom: 20px;">
-                  <label for="message" style="display: block; margin-bottom: 8px; font-weight: bold; color: #333;">Your Question/Message *</label>
-                  <textarea id="message" name="message" rows="6" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; resize: vertical;"></textarea>
-                </div>
-                
-                <div style="text-align: center;">
-                  <button type="submit" style="background: #ff6b35; color: white; padding: 12px 40px; border: none; border-radius: 5px; font-size: 18px; font-weight: bold; cursor: pointer; transition: all 0.3s ease;">Send Message</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4 col-md-6">
-            <div class="footer-info">
-              <h3>Michael and Ming</h3>
-              <p>Two spirited shelter cat brothers</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 footer-links">
-            <h4>Quick Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#hero">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#about">About</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#videos">Episodes</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#contact">Contact</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-            <div class="social-links mt-3">
-              <a href="https://www.youtube.com/@MichaelAndMing" class="youtube"><i class="bx bxl-youtube"></i> Watch on YouTube</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright 2025 <strong><span>Michael and Ming</span></strong> All Rights Reserved
-      </div>
-    </div>
-  </footer>
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <script>
-    const videoData = {
-      'halloween-wig': {
-        videoId: '-4NQAkDkqp8',
-        title: 'Michael and Ming Versus The Halloween Wig'
-      },
-      'litter-box': {
-        videoId: 'kee0SX_Cdrg',
-        title: 'The Ultimate Litter Box Setup'
-      },
-      'favorite-toy': {
-        videoId: 'VOHEkfsWXWU',
-        title: "Michael and Ming's Favorite New Toy"
-      },
-      'porch-patrol': {
-        videoId: 'AfK25aLKxoI',
-        title: 'Michael and Ming in Porch Patrol'
-      },
-      'climbing-tower': {
-        videoId: 'yJqHVDEu1kY',
-        title: '7 Reasons Why Michael and Ming are Obsessed with their Cat Climbing Tower'
-      }
-    };
-
-    function loadYouTubeThumbnails() {
-      Object.keys(videoData).forEach(videoKey => {
-        const videoId = videoData[videoKey].videoId;
-        const thumbnailImg = document.getElementById(`thumb-${videoKey}`);
-        
-        if (thumbnailImg && videoId) {
-          const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
-          thumbnailImg.src = thumbnailUrl;
-          thumbnailImg.style.opacity = '0';
-          thumbnailImg.style.transition = 'opacity 0.3s ease';
-          
-          thumbnailImg.onload = function() {
-            this.style.opacity = '1';
-          };
-          
-          thumbnailImg.onerror = function() {
-            this.onerror = null;
-            this.src = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
-          };
-        }
-      });
-    }
-
-    function openVideo(videoId) {
-      const overlay = document.getElementById('videoOverlay');
-      const youtubePlayer = document.getElementById('youtubePlayer');
-      
-      if (videoData[videoId] && videoData[videoId].videoId) {
-        const embedUrl = `https://www.youtube.com/embed/${videoData[videoId].videoId}?autoplay=1&rel=0&enablejsapi=1&playsinline=1&modestbranding=1`;
-        youtubePlayer.src = embedUrl;
-        overlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      }
-    }
-
-    function closeVideo(event) {
-      if (event && event.target !== event.currentTarget) {
-        return;
-      }
-      
-      const overlay = document.getElementById('videoOverlay');
-      const youtubePlayer = document.getElementById('youtubePlayer');
-      
-      overlay.classList.remove('active');
-      
-      const newIframe = document.createElement('iframe');
-      newIframe.id = 'youtubePlayer';
-      newIframe.allowFullscreen = true;
-      
-      youtubePlayer.parentNode.replaceChild(newIframe, youtubePlayer);
-      
-      document.body.style.overflow = 'auto';
-    }
-
-    function scrollBanner(direction, bannerId) {
-      const banner = document.getElementById(bannerId);
-      const scrollAmount = 300;
-      
-      if (direction === 'left') {
-        banner.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-      } else {
-        banner.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-      }
-    }
-
-    document.addEventListener('keydown', function(event) {
-      if (event.key === 'Escape') {
-        closeVideo();
-      }
-    });
-
-    document.querySelector('.video-modal').addEventListener('click', function(event) {
-      event.stopPropagation();
-    });
-
-    document.addEventListener('DOMContentLoaded', function() {
-      loadYouTubeThumbnails();
-    });
-  </script>
+  <!-- About Section (for demonstration) -->
+  <section id="about" class="about-section">
+    <h3>About Michael and Ming</h3>
+    <p>
+      Meet Michael and Ming, two spirited brothers who went from shelter cats to ruling the roost in their forever home! 
+      These lively kitties have captured everyone's hearts and are now seizing the spotlight on YouTube.
+    </p>
+    <p>
+      Michael is physically stronger but shy and afraid of a lot of things, while Ming is smaller in stature but calm, 
+      quick, and cool most of the time and isn't afraid of much. Together, they create the perfect dynamic duo!
+    </p>
+  </section>
 
 </body>
 </html>

@@ -1826,7 +1826,7 @@ color-mix(in srgb, var(--default-color), transparent 90%);
 
  @media screen and (max-width: 520px) {
 #hero {
-  background-image: url(../img/johnsong-mobile-br.png) !important;
+  /*background-image: url(../img/johnsong-mobile-br.png) !important;*/
   margin-top: 95px !important;
   background-size: cover;
 }
