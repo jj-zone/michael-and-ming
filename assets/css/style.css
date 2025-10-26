@@ -382,7 +382,7 @@ p {font-family: "EB Garamond", serif;
 
 #hero {
   width: 100%;
-  background-image: url(../img/dramatic-cello.png);
+ /* background-image: url(../img/dramatic-cello.png);*/
   background-repeat: no-repeat;
   background-size: 1500px;
   background-position: center top;
@@ -393,7 +393,7 @@ p {font-family: "EB Garamond", serif;
 
 #rosin {
   width: 100%;
-  background-image: url(../img/dramatic-cello-02.png);
+ /* background-image: url(../img/dramatic-cello-02.png);*/
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center top;
