@@ -1,0 +1,1523 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Michael and Ming</title>
+  <meta content="Michael and Ming - The dynamic duo of cats" name="description">
+  <meta content="Michael and Ming, cats, shelter cats, cat brothers" name="keywords">
+  
+  <!-- Favicons -->
+  <link href="assets/img/Michael-and-Ming-logo-image.png" rel="icon">
+  <link href="assets/img/Michael-and-Ming-logo-image.png" rel="apple-touch-icon">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Header Styles */
+    #header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 90px;
+      background: #fff;
+      z-index: 9999;
+      box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.5s;
+    }
+
+    #header .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+
+    #header .logo {
+      display: flex;
+      align-items: center;
+      margin-right: auto;
+    }
+
+    #header .logo img {
+      width: 70px;
+      height: 70px;
+      margin-right: 15px;
+    }
+
+    #header .logo h1 {
+      margin: 0;
+      line-height: 1;
+      font-size: 35px;
+    }
+
+    #header .logo h1 a {
+      color: #222222;
+      font-family: 'Bangers', cursive;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
+
+    /* Navigation */
+    .navbar {
+      padding: 0;
+    }
+
+    .navbar ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      list-style: none;
+      align-items: center;
+    }
+
+    .navbar li {
+      position: relative;
+    }
+
+    .navbar a {
+      display: flex;
+      align-items: center;
+      padding: 10px 0 10px 30px;
+      font-size: 15px;
+      font-family: 'Nunito', sans-serif;
+      color: #7b909a;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover,
+    .navbar .active {
+      color: #d32f2f;
+    }
+
+    /* Header Social Links */
+    .header-social-links {
+      margin-left: 30px;
+    }
+
+    .header-social-links a {
+      color: #7b909a;
+      font-size: 20px;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+
+    .header-social-links a:hover {
+      color: #d32f2f;
+    }
+
+    /* Mobile Navigation Toggle */
+    .mobile-nav-toggle {
+      display: none;
+      color: #364146;
+      font-size: 28px;
+      cursor: pointer;
+      line-height: 0;
+      transition: 0.5s;
+    }
+
+    @media (max-width: 991px) {
+      .mobile-nav-toggle {
+        display: block;
+      }
+
+      .navbar ul {
+        display: none;
+      }
+      
+      #header .logo h1 {
+        font-size: 24px;
+      }
+    }
+
+    /* Hero Section */
+    #hero {
+      position: relative !important;
+      width: 100% !important;
+      height: 100vh !important;
+      min-height: 600px !important;
+      overflow: hidden !important;
+      padding: 0 !important;
+      margin-top: 90px !important;
+      display: flex !important;
+      align-items: center !important;
+    }
+
+    .hero-video-bg {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      z-index: 1 !important;
+      overflow: hidden !important;
+    }
+
+    .hero-video-bg iframe {
+      position: absolute !important;
+      top: 50% !important;
+      left: 50% !important;
+      width: 100vw !important;
+      height: 56.25vw !important;
+      min-height: 100vh !important;
+      min-width: 177.77vh !important;
+      transform: translate(-50%, -50%) !important;
+      border: none !important;
+      pointer-events: none !important;
+    }
+
+    .hero-overlay {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      background: rgba(0, 0, 0, 0.4) !important;
+      z-index: 2 !important;
+    }
+
+    .hero-content {
+      position: relative !important;
+      z-index: 10 !important;
+      width: 100% !important;
+      padding: 0 15px !important;
+    }
+
+    .hero-text-box {
+      background: rgba(0, 0, 0, 0.4) !important;
+      padding: 40px !important;
+      border-radius: 10px !important;
+      backdrop-filter: blur(0px) !important;
+      max-width: 800px !important;
+    }
+
+    .hero-text-box h1 {
+      color: #fff !important;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9) !important;
+      font-family: 'Bangers', cursive !important;
+      letter-spacing: 2px !important;
+      font-size: 3.5rem !important;
+      margin-bottom: 20px !important;
+      line-height: 1.2 !important;
+    }
+
+    .hero-text-box h2 {
+      color: #fff !important;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9) !important;
+      font-size: 1.5rem !important;
+      margin-bottom: 30px !important;
+      line-height: 1.6 !important;
+      font-weight: 400 !important;
+    }
+
+    .btn-get-started {
+      display: inline-block !important;
+      padding: 15px 40px !important;
+      background: #ff6b35 !important;
+      color: white !important;
+      text-decoration: none !important;
+      border-radius: 50px !important;
+      font-weight: bold !important;
+      font-size: 18px !important;
+      transition: all 0.3s ease !important;
+      cursor: pointer !important;
+      box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4) !important;
+    }
+
+    .btn-get-started:hover {
+      background: #ff5722 !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 6px 20px rgba(255, 107, 53, 0.6) !important;
+    }
+
+    @media (max-width: 768px) {
+      .hero-text-box {
+        padding: 30px 20px !important;
+      }
+
+      .hero-text-box h1 {
+        font-size: 2rem !important;
+      }
+
+      .hero-text-box h2 {
+        font-size: 1.2rem !important;
+      }
+
+      .btn-get-started {
+        font-size: 16px !important;
+        padding: 12px 30px !important;
+      }
+
+      #hero {
+        height: 80vh !important;
+        min-height: 500px !important;
+      }
+    }
+
+    /* About Section */
+    .about-section {
+      padding: 80px 20px;
+      background: #ffffff;
+      position: relative;
+    }
+
+    .about-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('assets/img/catpaws-bg.png');
+      background-repeat: repeat;
+      background-size: auto;
+      background-position: center;
+      opacity: 0.30;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .about-section > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    @media (max-width: 768px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .about-section h3 {
+      font-family: 'Bangers', cursive;
+      font-size: 2.5rem;
+      color: #2c2c2c;
+      margin-bottom: 20px;
+    }
+
+    .about-section p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    /* Blog Section (Cat-pendium) */
+    .blog-section {
+      padding: 80px 20px;
+      background: #f9f9f9;
+      position: relative;
+    }
+
+    .blog-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('assets/img/catpaws-bg.png');
+      background-repeat: repeat;
+      background-size: auto;
+      background-position: center;
+      opacity: 0.08;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .blog-section > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .blog-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .blog-header h2 {
+      font-family: 'Bangers', cursive;
+      font-size: 3rem;
+      color: #2c2c2c;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+
+    .blog-header p {
+      font-size: 1.3rem;
+      color: #666;
+      font-style: italic;
+    }
+
+    .blog-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    @media (max-width: 992px) {
+      .blog-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+      }
+    }
+
+    .blog-card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+    }
+
+    .blog-card-image {
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+    }
+
+    .blog-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .blog-card:hover .blog-card-image img {
+      transform: scale(1.05);
+    }
+
+    .blog-card-content {
+      padding: 25px;
+    }
+
+    .blog-card-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #2c2c2c;
+      margin-bottom: 15px;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    .blog-card-excerpt {
+      color: #666;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .read-more-btn {
+      color: #ff6b35;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .read-more-btn:hover {
+      color: #ff5722;
+      gap: 10px;
+    }
+
+    /* Blog Modal Overlay */
+    .blog-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.9);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      animation: fadeIn 0.3s ease;
+      overflow-y: auto;
+      padding: 20px;
+    }
+
+    .blog-overlay.active {
+      display: flex;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .blog-modal {
+      position: relative;
+      max-width: 900px;
+      width: 100%;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      margin: auto;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .blog-modal-close {
+      position: sticky;
+      top: 20px;
+      right: 20px;
+      float: right;
+      background: #fff;
+      border: 2px solid #ff6b35;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: #ff6b35;
+      transition: all 0.3s ease;
+      z-index: 10;
+      margin-bottom: -40px;
+    }
+
+    .blog-modal-close:hover {
+      background: #ff6b35;
+      color: white;
+      transform: scale(1.1);
+    }
+
+    .blog-modal-image {
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+    }
+
+    .blog-modal-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .blog-modal-content {
+      padding: 40px;
+    }
+
+    .blog-modal-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #2c2c2c;
+      margin-bottom: 30px;
+      font-family: 'Nunito', sans-serif;
+      line-height: 1.2;
+    }
+
+    .blog-modal-body {
+      color: #333;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .blog-modal-body p {
+      margin-bottom: 20px;
+    }
+
+    .blog-modal-body a {
+      color: #ff6b35;
+      text-decoration: none;
+      border-bottom: 1px solid #ff6b35;
+      transition: all 0.3s ease;
+    }
+
+    .blog-modal-body a:hover {
+      color: #ff5722;
+      border-bottom-color: #ff5722;
+    }
+
+    @media (max-width: 768px) {
+      .blog-modal-content {
+        padding: 30px 20px;
+      }
+
+      .blog-modal-title {
+        font-size: 2rem;
+      }
+
+      .blog-modal-image {
+        height: 250px;
+      }
+    }
+
+    /* Videos Section */
+    .videos-section {
+      padding: 60px 20px;
+      background: #e8e8e8;
+      position: relative;
+    }
+
+    .videos-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('assets/img/catpaws-bg.png');
+      background-repeat: repeat;
+      background-size: auto;
+      background-position: center;
+      opacity: 0.15;
+      filter: invert(1) brightness(2.5);
+      pointer-events: none;
+      z-index: 0;
+      mask-image: linear-gradient(to bottom, transparent 0%, black 80px, black 100%);
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 80px, black 100%);
+    }
+
+    .videos-section > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .videos-section .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .videos-section .header h1 {
+      font-size: 2.5rem;
+      color: #2c2c2c;
+      margin-bottom: 10px;
+      font-family: 'Bangers', cursive;
+    }
+
+    .gallery-section-title {
+      font-size: 1.5rem;
+      color: #2c2c2c;
+      margin-bottom: 20px;
+      padding-left: 10px;
+      border-left: 4px solid #ff6b35;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .video-gallery {
+      position: relative;
+      margin-bottom: 40px;
+      overflow: hidden;
+      padding: 10px 0;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .video-banner {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 10px;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .video-banner::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scroll-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50px;
+      height: 50px;
+      background: rgba(255, 255, 255, 0.95);
+      border: 2px solid #ff6b35;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: #ff6b35;
+      z-index: 10;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .scroll-button:hover {
+      background: #ff6b35;
+      color: white;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .scroll-left {
+      left: 10px;
+    }
+
+    .scroll-right {
+      right: 10px;
+    }
+
+    .video-card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      width: 320px;
+      flex-shrink: 0;
+    }
+
+    .video-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+    }
+
+    .video-thumbnail {
+      position: relative;
+      width: 100%;
+      height: 180px;
+      background: linear-gradient(135deg, #6a6a6a, #999);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .video-thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .video-card:hover .video-thumbnail img {
+      transform: scale(1.05);
+    }
+
+    .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .play-button::after {
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 18px solid #ff6b35;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      margin-left: 4px;
+    }
+
+    .video-card:hover .play-button {
+      background: rgba(255, 255, 255, 1);
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    .video-info {
+      padding: 20px;
+    }
+
+    .video-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #2c2c2c;
+      margin-bottom: 8px;
+    }
+
+    .video-description {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+
+    .video-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.9);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .video-overlay.active {
+      display: flex;
+    }
+
+    .video-modal {
+      position: relative;
+      max-width: 95vw;
+      max-height: 95vh;
+      background: #000;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .video-modal iframe {
+      width: 100%;
+      height: auto;
+      max-height: 90vh;
+      aspect-ratio: 16/9;
+      border: none;
+    }
+
+    @media (min-width: 1024px) {
+      .video-modal {
+        max-width: 80vw;
+        max-height: 85vh;
+      }
+      
+      .video-modal iframe {
+        max-height: 80vh;
+        width: 100%;
+        min-height: 60vh;
+      }
+    }
+
+    .close-button {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      background: #fff;
+      border: none;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: #333;
+      transition: all 0.3s ease;
+    }
+
+    .close-button:hover {
+      background: #f0f0f0;
+      transform: scale(1.1);
+    }
+
+    /* Contact Section */
+    .contact-section {
+      padding: 80px 20px;
+      background: #e8e8e8;
+      position: relative;
+    }
+
+    .contact-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      gap: 40px;
+      align-items: stretch;
+    }
+
+    .contact-grid > div:last-child {
+      display: flex;
+      align-items: center;
+    }
+
+    .contact-grid > div:last-child img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .contact-section > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-section .section-title {
+      text-align: left;
+      margin-bottom: 40px;
+    }
+
+    .contact-section .section-title h2 {
+      font-family: 'Bangers', cursive;
+      letter-spacing: 1px;
+      font-size: 2.5rem;
+      color: #2c2c2c;
+    }
+
+    .contact-section .info {
+      max-width: 100%;
+      margin: 0;
+    }
+
+    .contact-section p {
+      font-size: 20px;
+      margin-bottom: 30px;
+      text-align: left;
+      line-height: 1.8;
+    }
+
+    .youtube-link {
+      color: #ff6b35;
+      text-decoration: none;
+      font-weight: bold;
+      border-bottom: 2px solid #ff6b35;
+      transition: 0.3s;
+    }
+
+    .youtube-link:hover {
+      color: #ff5722;
+      border-bottom-color: #ff5722;
+    }
+
+    /* Footer */
+    #footer {
+      background: #1B1A15;
+      padding: 60px 0 30px 0;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    #footer .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 30px;
+    }
+
+    #footer .footer-info {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    #footer .footer-info img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+
+    #footer .footer-info-text h3 {
+      font-size: 24px;
+      margin: 0 0 8px 0;
+      font-family: 'Bangers', cursive;
+    }
+
+    #footer .footer-info-text p {
+      color: #bebebe;
+      margin: 0;
+      font-size: 14px;
+    }
+
+    #footer .footer-links h4 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 15px;
+    }
+
+    #footer .footer-links ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #footer .footer-links ul li {
+      padding: 8px 0;
+    }
+
+    #footer .footer-links ul li a {
+      color: #ffffff;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    #footer .footer-links ul li a:hover {
+      color: #ff6b35;
+    }
+
+    #footer .social-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ff6b35;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: 0.3s;
+      font-size: 16px;
+    }
+
+    #footer .social-links a:hover {
+      background: #ff5722;
+    }
+
+    #footer .copyright {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid #333;
+      color: #bebebe;
+    }
+
+    .affiliate-disclaimer {
+      font-size: 0.75rem;
+      color: #888;
+      padding: 15px;
+      margin-top: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header id="header">
+    <div class="container">
+      <div class="logo">
+        <img src="assets/img/Michael-and-Ming-logo-image.png" alt="Michael and Ming logo">
+        <h1><a href="index.html">MICHAEL AND MING</a></h1>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link active" href="#hero">Home</a></li>
+          <li><a class="nav-link" href="#about">About</a></li>
+          <li><a class="nav-link" href="#blog">Cat-pendium</a></li>
+          <li><a class="nav-link" href="#videos">Episodes</a></li>
+          <li><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+
+      <div class="header-social-links">
+        <a href="https://www.youtube.com/@MichaelAndMing" title="YouTube">
+          <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="hero-video-bg">
+      <iframe 
+        src="https://www.youtube.com/embed/TajoKa9oJaU?autoplay=1&mute=1&loop=1&playlist=TajoKa9oJaU&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1" 
+        title="Michael and Ming Video" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="hero-text-box">
+        <h1>Meet Michael and Ming</h1>
+        <h2>Two curious brothers who clawed their way from the shelter to stardom — and they're just getting started!</h2>
+        <a href="#about" class="btn-get-started">Learn about Michael and Ming</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="about-grid">
+      <div>
+        <img src="assets/img/michael-and-ming-porch.png" alt="Michael and Ming on porch" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+      </div>
+      <div style="text-align: left;">
+        <h3>About Michael and Ming</h3>
+        <p>
+          From the shelter to the spotlight—Michael and Ming, the dynamic duo of cats, are taking center stage. One's a cautious powerhouse with a heart of gold. The other's a fearless mastermind with lightning-fast reflexes. Together, they turn everyday life into a blockbuster of curiosity, comedy, and chaos.
+        </p>
+        <p>
+          Whether they're racing through the living room like action heroes, sharing a brotherly nap in the calm after the storm, or plotting their next grand escapade, Michael and Ming prove that the most unforgettable adventures start with nine lives and one unbreakable bond.
+        </p>
+        <p>
+          <strong style="color: #ff6b35; font-size: 20px;">Subscribe now to join the Michael and Ming fan club and never miss an adventure!</strong>
+        </p>
+        <p>
+          For more information, visit <a href="https://www.youtube.com/@MichaelAndMing" target="_blank" class="youtube-link">youtube.com/@MichaelAndMing</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Section (Cat-pendium) -->
+  <section id="blog" class="blog-section">
+    <div class="blog-header">
+      <h2>Cat-pendium</h2>
+      <p>Insights, reviews, and playful findings from Michael and Ming</p>
+    </div>
+
+    <div class="blog-grid">
+      <!-- Blog Post 1 -->
+      <div class="blog-card" onclick="openBlogPost('post1')">
+        <div class="blog-card-image">
+          <img src="assets/img/michael-and-ming-porch.png" alt="Blog post 1">
+        </div>
+        <div class="blog-card-content">
+          <h3 class="blog-card-title">The Great Window Perch Discovery</h3>
+          <p class="blog-card-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+          <a href="#" class="read-more-btn" onclick="event.preventDefault();">Read more →</a>
+        </div>
+      </div>
+
+      <!-- Blog Post 2 -->
+      <div class="blog-card" onclick="openBlogPost('post2')">
+        <div class="blog-card-image">
+          <img src="assets/img/michael-and-ming-treats.png" alt="Blog post 2">
+        </div>
+        <div class="blog-card-content">
+          <h3 class="blog-card-title">Treats That Changed Our Lives</h3>
+          <p class="blog-card-excerpt">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
+          <a href="#" class="read-more-btn" onclick="event.preventDefault();">Read more →</a>
+        </div>
+      </div>
+
+      <!-- Blog Post 3 -->
+      <div class="blog-card" onclick="openBlogPost('post3')">
+        <div class="blog-card-image">
+          <img src="assets/img/Michael-and-Ming-logo-image.png" alt="Blog post 3">
+        </div>
+        <div class="blog-card-content">
+          <h3 class="blog-card-title">Brotherhood: A Tail of Two Cats</h3>
+          <p class="blog-card-excerpt">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...</p>
+          <a href="#" class="read-more-btn" onclick="event.preventDefault();">Read more →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Overlay Modal -->
+  <div class="blog-overlay" id="blogOverlay" onclick="closeBlogPost(event)">
+    <div class="blog-modal" onclick="event.stopPropagation();">
+      <div class="blog-modal-content">
+        <button class="blog-modal-close" onclick="closeBlogPost()">&times;</button>
+        <div class="blog-modal-image" id="blogModalImage">
+          <img id="blogModalImg" src="" alt="">
+        </div>
+        <h2 class="blog-modal-title" id="blogModalTitle"></h2>
+        <div class="blog-modal-body" id="blogModalBody"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Videos Section -->
+  <section id="videos" class="videos-section">
+    <div class="header">
+      <h1>Michael and Ming Gallery of Recent Videos</h1>
+    </div>
+
+    <div class="gallery-section-title">Episodes</div>
+    <div class="video-gallery">
+      <button class="scroll-button scroll-left" onclick="scrollBanner('left')">‹</button>
+      <button class="scroll-button scroll-right" onclick="scrollBanner('right')">›</button>
+      <div class="video-banner" id="videoBanner">
+        
+        <div class="video-card" onclick="openVideo('halloween-wig')">
+          <div class="video-thumbnail">
+            <img id="thumb-halloween-wig" alt="Michael and Ming Versus The Halloween Wig">
+            <div class="play-button"></div>
+          </div>
+          <div class="video-info">
+            <div class="video-title">Michael and Ming Versus The Halloween Wig</div>
+            <div class="video-description">Watch as Michael and Ming encounter a mysterious Halloween wig! How will these brave brothers react?</div>
+          </div>
+        </div>
+
+        <div class="video-card" onclick="openVideo('litter-box')">
+          <div class="video-thumbnail">
+            <img id="thumb-litter-box" alt="The Ultimate Litter Box Setup">
+            <div class="play-button"></div>
+          </div>
+          <div class="video-info">
+            <div class="video-title">The Ultimate Litter Box Setup</div>
+            <div class="video-description">Discover the perfect litter box setup that keeps Michael and Ming happy and your home fresh!</div>
+          </div>
+        </div>
+
+        <div class="video-card" onclick="openVideo('favorite-toy')">
+          <div class="video-thumbnail">
+            <img id="thumb-favorite-toy" alt="Michael and Ming's Favorite New Toy">
+            <div class="play-button"></div>
+          </div>
+          <div class="video-info">
+            <div class="video-title">Michael and Ming's Favorite New Toy</div>
+            <div class="video-description">See what toy has captured the hearts of these playful brothers!</div>
+          </div>
+        </div>
+
+        <div class="video-card" onclick="openVideo('porch-patrol')">
+          <div class="video-thumbnail">
+            <img id="thumb-porch-patrol" alt="Michael and Ming in Porch Patrol">
+            <div class="play-button"></div>
+          </div>
+          <div class="video-info">
+            <div class="video-title">Michael and Ming in Porch Patrol</div>
+            <div class="video-description">Join Michael and Ming as they keep watch over their territory from the porch!</div>
+          </div>
+        </div>
+
+        <div class="video-card" onclick="openVideo('climbing-tower')">
+          <div class="video-thumbnail">
+            <img id="thumb-climbing-tower" alt="7 Reasons Why Michael and Ming are Obsessed with their Cat Climbing Tower">
+            <div class="play-button"></div>
+          </div>
+          <div class="video-info">
+            <div class="video-title">7 Reasons Why Michael and Ming are Obsessed with their Cat Climbing Tower</div>
+            <div class="video-description">Find out why this climbing tower has become Michael and Ming's favorite hangout spot!</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Affiliate Disclaimer -->
+    <div style="max-width: 1200px; margin: 40px auto 0 auto; padding: 0 20px;">
+      <div class="affiliate-disclaimer">
+        <strong style="color: #333;">AFFILIATES DISCLAIMER:</strong> <span style="color: #666; font-size: 14px; line-height: 1.6;">Certain Michael and Ming YouTube channel video descriptions may contain links to affiliate websites, and we receive an affiliate commission for any purchases made by you on the affiliate website using such links. The Michael and Ming channel are participants in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for us to earn advertising fees by linking to Amazon.com and affiliated websites.</span>
+      </div>
+    </div>
+
+    <!-- Video Overlay Modal -->
+    <div class="video-overlay" id="videoOverlay" onclick="closeVideo(event)">
+      <div class="video-modal">
+        <button class="close-button" onclick="closeVideo()">&times;</button>
+        <iframe id="youtubePlayer" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="contact-grid">
+      <div>
+        <div class="section-title">
+          <h2>Connect with Michael and Ming</h2>
+        </div>
+
+        <div class="info">
+          <p>Have questions for Michael and Ming? Want to share your own cat stories or just say hello?</p>
+          <p>
+            Join the conversation on our YouTube channel! Comment on any of our videos and we'll respond to your questions and messages there. 
+            Visit us at <a href="https://www.youtube.com/@MichaelAndMing" target="_blank" class="youtube-link">youtube.com/@MichaelAndMing</a> 
+            and be part of the Michael and Ming community!
+          </p>
+        </div>
+      </div>
+      <div>
+        <img src="assets/img/michael-and-ming-treats.png" alt="Michael and Ming getting treats">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="footer-container">
+      <div class="footer-info">
+        <img src="assets/img/Michael-and-Ming-logo-image.png" alt="Michael and Ming logo">
+        <div class="footer-info-text">
+          <h3>Michael and Ming</h3>
+          <p>The dynamic duo of cats</p>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#blog">Cat-pendium</a></li>
+          <li><a href="#videos">Episodes</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-newsletter">
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <a href="https://www.youtube.com/@MichaelAndMing">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
+            </svg>
+            Watch on YouTube
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright">
+      &copy; Copyright 2025 <strong><span>Michael and Ming</span></strong> All Rights Reserved
+    </div>
+  </footer>
+
+  <script>
+    // Blog Post Data
+    const blogPosts = {
+      post1: {
+        title: 'The Great Window Perch Discovery',
+        image: 'assets/img/michael-and-ming-porch.png',
+        content: `
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Check out this <a href="https://amazon.com/sample-product-1" target="_blank">amazing window perch</a> that changed everything for us.</p>
+          
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+          
+          <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. We also recommend this <a href="https://amazon.com/sample-product-2" target="_blank">comfort cushion</a> for maximum lounging pleasure.</p>
+          
+          <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+          
+          <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.</p>
+        `
+      },
+      post2: {
+        title: 'Treats That Changed Our Lives',
+        image: 'assets/img/michael-and-ming-treats.png',
+        content: `
+          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          
+          <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. These <a href="https://amazon.com/sample-treats-1" target="_blank">premium treats</a> have become our absolute favorite.</p>
+          
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+          
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. For variety, we also love these <a href="https://amazon.com/sample-treats-2" target="_blank">gourmet chicken bites</a> that keep treat time exciting.</p>
+          
+          <p>Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+          
+          <p>Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit. Don't forget to pair them with this <a href="https://amazon.com/sample-storage" target="_blank">treat storage container</a> to keep them fresh!</p>
+        `
+      },
+      post3: {
+        title: 'Brotherhood: A Tail of Two Cats',
+        image: 'assets/img/Michael-and-Ming-logo-image.png',
+        content: `
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Building a strong bond requires the right tools, like this <a href="https://amazon.com/sample-toy-1" target="_blank">interactive toy set</a> perfect for brothers.</p>
+          
+          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
+          
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+          
+          <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. We share everything, including this <a href="https://amazon.com/sample-bed" target="_blank">cozy double cat bed</a> that's perfect for nap time together.</p>
+          
+          <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Brotherhood is the greatest adventure of all.</p>
+        `
+      }
+    };
+
+    // Blog Functions
+    function openBlogPost(postId) {
+      const overlay = document.getElementById('blogOverlay');
+      const post = blogPosts[postId];
+      
+      if (post) {
+        document.getElementById('blogModalTitle').textContent = post.title;
+        document.getElementById('blogModalImg').src = post.image;
+        document.getElementById('blogModalImg').alt = post.title;
+        document.getElementById('blogModalBody').innerHTML = post.content;
+        
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeBlogPost(event) {
+      if (event && event.target !== document.getElementById('blogOverlay') && !event.target.classList.contains('blog-modal-close')) {
+        return;
+      }
+      
+      const overlay = document.getElementById('blogOverlay');
+      overlay.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Video Data
+    const videoData = {
+      'halloween-wig': {
+        videoId: '-4NQAkDkqp8',
+        title: 'Michael and Ming Versus The Halloween Wig'
+      },
+      'litter-box': {
+        videoId: 'kee0SX_Cdrg',
+        title: 'The Ultimate Litter Box Setup'
+      },
+      'favorite-toy': {
+        videoId: 'VOHEkfsWXWU',
+        title: "Michael and Ming's Favorite New Toy"
+      },
+      'porch-patrol': {
+        videoId: 'AfK25aLKxoI',
+        title: 'Michael and Ming in Porch Patrol'
+      },
+      'climbing-tower': {
+        videoId: 'yJqHVDEu1kY',
+        title: '7 Reasons Why Michael and Ming are Obsessed with their Cat Climbing Tower'
+      }
+    };
+
+    function loadYouTubeThumbnails() {
+      Object.keys(videoData).forEach(videoKey => {
+        const videoId = videoData[videoKey].videoId;
+        const thumbnailImg = document.getElementById(`thumb-${videoKey}`);
+        
+        if (thumbnailImg && videoId) {
+          const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+          thumbnailImg.src = thumbnailUrl;
+          thumbnailImg.style.opacity = '0';
+          thumbnailImg.style.transition = 'opacity 0.3s ease';
+          
+          thumbnailImg.onload = function() {
+            this.style.opacity = '1';
+          };
+          
+          thumbnailImg.onerror = function() {
+            this.onerror = null;
+            this.src = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
+          };
+        }
+      });
+    }
+
+    function openVideo(videoId) {
+      const overlay = document.getElementById('videoOverlay');
+      const youtubePlayer = document.getElementById('youtubePlayer');
+      
+      if (videoData[videoId] && videoData[videoId].videoId) {
+        const embedUrl = `https://www.youtube.com/embed/${videoData[videoId].videoId}?autoplay=1&rel=0&enablejsapi=1&playsinline=1&modestbranding=1`;
+        youtubePlayer.src = embedUrl;
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeVideo(event) {
+      if (event && event.target !== event.currentTarget && !event.target.classList.contains('close-button')) {
+        return;
+      }
+      
+      const overlay = document.getElementById('videoOverlay');
+      const youtubePlayer = document.getElementById('youtubePlayer');
+      
+      overlay.classList.remove('active');
+      youtubePlayer.src = '';
+      document.body.style.overflow = 'auto';
+    }
+
+    function scrollBanner(direction) {
+      const banner = document.getElementById('videoBanner');
+      const scrollAmount = 340;
+      
+      if (direction === 'left') {
+        banner.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      } else {
+        banner.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
+    }
+
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeVideo(event);
+        closeBlogPost(event);
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      loadYouTubeThumbnails();
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            const headerOffset = 90;
+            const elementPosition = target.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
