@@ -294,7 +294,7 @@
       background-repeat: repeat;
       background-size: auto;
       background-position: center;
-      opacity: 0.15;
+      opacity: 0.30;
       pointer-events: none;
       z-index: 0;
     }
@@ -351,8 +351,8 @@
       background-repeat: repeat;
       background-size: auto;
       background-position: center;
-      opacity: 0.1;
-      filter: invert(1) brightness(2);
+      opacity: 0.15;
+      filter: invert(1) brightness(2.5);
       pointer-events: none;
       z-index: 0;
     }
@@ -616,28 +616,26 @@
       transform: scale(1.1);
     }
 
-    /* Contact Section - with light grey background and subtle white paws */
+    /* Contact Section - with light grey background and NO paws */
     .contact-section {
       padding: 80px 20px;
       background: #e8e8e8;
       position: relative;
     }
 
-    .contact-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: url('assets/img/catpaws-bg.png');
-      background-repeat: repeat;
-      background-size: auto;
-      background-position: center;
-      opacity: 0.1;
-      filter: invert(1) brightness(2);
-      pointer-events: none;
-      z-index: 0;
+    .contact-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    @media (max-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .contact-section > * {
@@ -649,7 +647,7 @@
     /* No longer needed - removed filter approach */
 
     .contact-section .section-title {
-      text-align: center;
+      text-align: left;
       margin-bottom: 40px;
     }
 
@@ -661,14 +659,14 @@
     }
 
     .contact-section .info {
-      max-width: 900px;
-      margin: 0 auto;
+      max-width: 100%;
+      margin: 0;
     }
 
     .contact-section p {
       font-size: 20px;
       margin-bottom: 30px;
-      text-align: center;
+      text-align: left;
       line-height: 1.8;
     }
 
@@ -958,17 +956,24 @@
 
   <!-- Contact Section -->
   <section id="contact" class="contact-section">
-    <div class="section-title">
-      <h2>Connect with Michael and Ming</h2>
-    </div>
+    <div class="contact-grid">
+      <div>
+        <div class="section-title">
+          <h2>Connect with Michael and Ming</h2>
+        </div>
 
-    <div class="info">
-      <p>Have questions for Michael and Ming? Want to share your own cat stories or just say hello?</p>
-      <p>
-        Join the conversation on our YouTube channel! Comment on any of our videos and we'll respond to your questions and messages there. 
-        Visit us at <a href="https://www.youtube.com/@MichaelAndMing" target="_blank" class="youtube-link">youtube.com/@MichaelAndMing</a> 
-        and be part of the Michael and Ming community!
-      </p>
+        <div class="info">
+          <p>Have questions for Michael and Ming? Want to share your own cat stories or just say hello?</p>
+          <p>
+            Join the conversation on our YouTube channel! Comment on any of our videos and we'll respond to your questions and messages there. 
+            Visit us at <a href="https://www.youtube.com/@MichaelAndMing" target="_blank" class="youtube-link">youtube.com/@MichaelAndMing</a> 
+            and be part of the Michael and Ming community!
+          </p>
+        </div>
+      </div>
+      <div>
+        <img src="assets/img/michael-and-ming-porch.png" alt="Michael and Ming on porch" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+      </div>
     </div>
   </section>
 
