@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -277,10 +276,14 @@
       }
     }
 
-    /* About Section */
+    /* About Section - with paw prints background */
     .about-section {
       padding: 80px 20px;
       background: #ffffff;
+      background-image: url('assets/img/paws-background.png');
+      background-repeat: repeat;
+      background-size: auto;
+      background-position: center;
     }
 
     .about-grid {
@@ -312,10 +315,20 @@
       margin-bottom: 20px;
     }
 
-    /* Videos Section */
+    /* Videos Section - with inverted paw prints */
     .videos-section {
       padding: 60px 20px;
-      background: #f5f5f5;
+      background: #d3d3d3;
+      background-image: url('assets/img/paws-background.png');
+      background-repeat: repeat;
+      background-size: auto;
+      background-position: center;
+      filter: invert(1);
+    }
+
+    /* Fix for content inside videos section to not be inverted */
+    .videos-section * {
+      filter: invert(1);
     }
 
     .videos-section .header {
@@ -569,10 +582,20 @@
       transform: scale(1.1);
     }
 
-    /* Contact Section */
+    /* Contact Section - with inverted paw prints */
     .contact-section {
       padding: 80px 20px;
-      background: #f7f8f9;
+      background: #d3d3d3;
+      background-image: url('assets/img/paws-background.png');
+      background-repeat: repeat;
+      background-size: auto;
+      background-position: center;
+      filter: invert(1);
+    }
+
+    /* Fix for content inside contact section to not be inverted */
+    .contact-section * {
+      filter: invert(1);
     }
 
     .contact-section .section-title {
@@ -766,7 +789,7 @@
     <div class="hero-content">
       <div class="hero-text-box">
         <h1>Meet Michael and Ming</h1>
-        <h2>Two curious brothers who clawed their way from the shelter to stardom — and they’re just getting started!</h2>
+        <h2>Two curious brothers who clawed their way from the shelter to stardom — and they're just getting started!</h2>
         <a href="#about" class="btn-get-started">Learn about Michael and Ming</a>
       </div>
     </div>
@@ -896,39 +919,6 @@
         Visit us at <a href="https://www.youtube.com/@MichaelAndMing" target="_blank" class="youtube-link">youtube.com/@MichaelAndMing</a> 
         and be part of the Michael and Ming community!
       </p>
-      
-      <!-- Contact form hidden as requested -->
-      <!--
-      <div class="contact-form-container">
-        <form action="#" method="post">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Your Name *</label>
-              <input type="text" id="name" name="name" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="email">Your Email *</label>
-              <input type="email" id="email" name="email" required>
-            </div>
-          </div>
-          
-          <div class="form-group">
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject">
-          </div>
-          
-          <div class="form-group">
-            <label for="message">Your Question/Message *</label>
-            <textarea id="message" name="message" rows="6" required></textarea>
-          </div>
-          
-          <div class="form-submit">
-            <button type="submit">Send Message</button>
-          </div>
-        </form>
-      </div>
-      -->
     </div>
   </section>
 
@@ -1083,43 +1073,5 @@
     });
   </script>
 
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
 </body>
 </html>
