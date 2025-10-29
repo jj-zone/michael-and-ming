@@ -280,10 +280,6 @@
     .about-section {
       padding: 80px 20px;
       background: #ffffff;
-      background-image: url('assets/img/catpaws-bg.png');
-      background-repeat: repeat;
-      background-size: auto;
-      background-position: center;
       position: relative;
     }
 
@@ -293,27 +289,19 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 100px;
-      background: linear-gradient(to bottom, #ffffff 0%, transparent 100%);
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .about-section::after {
-      content: '';
-      position: absolute;
       bottom: 0;
-      left: 0;
-      right: 0;
-      height: 100px;
-      background: linear-gradient(to top, #ffffff 0%, transparent 100%);
+      background-image: url('assets/img/catpaws-bg.png');
+      background-repeat: repeat;
+      background-size: auto;
+      background-position: center;
+      opacity: 0.15;
       pointer-events: none;
-      z-index: 1;
+      z-index: 0;
     }
 
     .about-section > * {
       position: relative;
-      z-index: 2;
+      z-index: 1;
     }
 
     .about-grid {
@@ -345,15 +333,10 @@
       margin-bottom: 20px;
     }
 
-    /* Videos Section - with inverted paw prints */
+    /* Videos Section - with light grey background and subtle white paws */
     .videos-section {
       padding: 60px 20px;
-      background: #f5f5f5;
-      background-image: url('assets/img/catpaws-bg.png');
-      background-repeat: repeat;
-      background-size: auto;
-      background-position: center;
-      filter: invert(0.95);
+      background: #e8e8e8;
       position: relative;
     }
 
@@ -363,33 +346,24 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 100px;
-      background: linear-gradient(to bottom, #0a0a0a 0%, transparent 100%);
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .videos-section::after {
-      content: '';
-      position: absolute;
       bottom: 0;
-      left: 0;
-      right: 0;
-      height: 100px;
-      background: linear-gradient(to top, #0a0a0a 0%, transparent 100%);
+      background-image: url('assets/img/catpaws-bg.png');
+      background-repeat: repeat;
+      background-size: auto;
+      background-position: center;
+      opacity: 0.1;
+      filter: invert(1) brightness(2);
       pointer-events: none;
-      z-index: 1;
+      z-index: 0;
     }
 
     .videos-section > * {
       position: relative;
-      z-index: 2;
+      z-index: 1;
     }
 
     /* Fix for content inside videos section to not be inverted */
-    .videos-section * {
-      filter: invert(0.95);
-    }
+    /* No longer needed - removed filter approach */
 
     .videos-section .header {
       text-align: center;
@@ -642,15 +616,10 @@
       transform: scale(1.1);
     }
 
-    /* Contact Section - with inverted paw prints */
+    /* Contact Section - with light grey background and subtle white paws */
     .contact-section {
       padding: 80px 20px;
-      background: #f5f5f5;
-      background-image: url('assets/img/catpaws-bg.png');
-      background-repeat: repeat;
-      background-size: auto;
-      background-position: center;
-      filter: invert(0.95);
+      background: #e8e8e8;
       position: relative;
     }
 
@@ -660,33 +629,24 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 100px;
-      background: linear-gradient(to bottom, #0a0a0a 0%, transparent 100%);
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .contact-section::after {
-      content: '';
-      position: absolute;
       bottom: 0;
-      left: 0;
-      right: 0;
-      height: 100px;
-      background: linear-gradient(to top, #0a0a0a 0%, transparent 100%);
+      background-image: url('assets/img/catpaws-bg.png');
+      background-repeat: repeat;
+      background-size: auto;
+      background-position: center;
+      opacity: 0.1;
+      filter: invert(1) brightness(2);
       pointer-events: none;
-      z-index: 1;
+      z-index: 0;
     }
 
     .contact-section > * {
       position: relative;
-      z-index: 2;
+      z-index: 1;
     }
 
     /* Fix for content inside contact section to not be inverted */
-    .contact-section * {
-      filter: invert(0.95);
-    }
+    /* No longer needed - removed filter approach */
 
     .contact-section .section-title {
       text-align: center;
