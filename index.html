@@ -284,6 +284,36 @@
       background-repeat: repeat;
       background-size: auto;
       background-position: center;
+      position: relative;
+    }
+
+    .about-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background: linear-gradient(to bottom, #ffffff 0%, transparent 100%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .about-section::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background: linear-gradient(to top, #ffffff 0%, transparent 100%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .about-section > * {
+      position: relative;
+      z-index: 2;
     }
 
     .about-grid {
@@ -324,6 +354,36 @@
       background-size: auto;
       background-position: center;
       filter: invert(0.95);
+      position: relative;
+    }
+
+    .videos-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background: linear-gradient(to bottom, #0a0a0a 0%, transparent 100%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .videos-section::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background: linear-gradient(to top, #0a0a0a 0%, transparent 100%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .videos-section > * {
+      position: relative;
+      z-index: 2;
     }
 
     /* Fix for content inside videos section to not be inverted */
@@ -591,6 +651,36 @@
       background-size: auto;
       background-position: center;
       filter: invert(0.95);
+      position: relative;
+    }
+
+    .contact-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background: linear-gradient(to bottom, #0a0a0a 0%, transparent 100%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .contact-section::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background: linear-gradient(to top, #0a0a0a 0%, transparent 100%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .contact-section > * {
+      position: relative;
+      z-index: 2;
     }
 
     /* Fix for content inside contact section to not be inverted */
