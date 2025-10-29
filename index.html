@@ -631,7 +631,20 @@
       display: grid;
       grid-template-columns: 3fr 1fr;
       gap: 40px;
-      align-items: start;
+      align-items: stretch;
+    }
+
+    .contact-grid > div:last-child {
+      display: flex;
+      align-items: center;
+    }
+
+    .contact-grid > div:last-child img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
     @media (max-width: 768px) {
@@ -977,7 +990,7 @@
         </div>
       </div>
       <div>
-        <img src="assets/img/Michael-and-Ming-treats.png" alt="Michael and Ming with treats" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+        <img src="assets/img/Michael-and-Ming-treats.png" alt="Michael and Ming with treats">
       </div>
     </div>
   </section>
